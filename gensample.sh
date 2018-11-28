@@ -1,0 +1,1 @@
+java -cp ../code2vec/JavaExtractor/JPredict/target/JavaExtractor-0.0.1-SNAPSHOT.jar JavaExtractor.App --max_path_length=8 --max_path_width=2 --file ../bridgepoint/src/org.xtuml.bp.ui.canvas/src/org/xtuml/bp/ui/canvas/GCDelegate.java
