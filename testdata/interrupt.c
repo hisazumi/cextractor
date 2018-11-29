@@ -6,7 +6,7 @@ static volatile unsigned local;
 static volatile unsigned ghartid;
 
 static unsigned delta = 10;
-void *hander(unsigned hartid, unsigned mcause, void *mepc, void *sp)
+void *interrupt_hander(unsigned hartid, unsigned mcause, void *mepc, void *sp)
 {
     interrupt_count++;
     ghartid = hartid;
