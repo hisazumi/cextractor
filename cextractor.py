@@ -57,11 +57,13 @@ def function_decl(node):
     for child in node.get_children():
         function_decl_print(child, '')
 
+    # itemize all combiantion of leaf nodes
     combinations = [x for x in itertools.combinations(get_all_leafs(node), 2)]
 
     print("-----")
     for t in combinations:
         print("> %s %s : %s %s" % (t[0].kind.name, t[0].displayname, t[1].kind.name, t[1].displayname))
+        print(">> %s" % t[0].lexical_parent)
     print("-----")
 
 
