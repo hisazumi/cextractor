@@ -10,8 +10,6 @@ from clang.cindex import Index, Cursor
 #        return context.textExtent(string);
 #    }
 
-
-
 def function_decl(node):
     def camel_case_split(identifier):
         matches = re.finditer(
@@ -39,9 +37,9 @@ def function_decl(node):
 
         for child in node.get_children():
             if is_finished(child.get_children()):
-                terminals.append(child)
+                terminals.extend([child.kind.name, child.displayname])
             else:
-                terminals.extend(function_decl_traverse(child))
+                terminals.extend([child.kind.name, child.displayname, function_decl_traverse(child)])
 
         return terminals
 
@@ -57,15 +55,16 @@ def function_decl(node):
     for child in node.get_children():
         function_decl_print(child, '')
 
+    nodes = get_all_leafs(node)
+    print("%s" % nodes)    
+
     # itemize all combiantion of leaf nodes
-    combinations = [x for x in itertools.combinations(get_all_leafs(node), 2)]
+    #combinations = [x for x in itertools.combinations(get_all_leafs(node), 2)]
 
-    print("-----")
-    for t in combinations:
-        print("> %s %s : %s %s" % (t[0].kind.name, t[0].displayname, t[1].kind.name, t[1].displayname))
-        print(">> %s" % t[0].lexical_parent)
-    print("-----")
-
+    #print("-----")
+    #for t in combinations:
+    #    print("> %s %s : %s %s" % (t[0].kind.name, t[0].displayname, t[1].kind.name, t[1].displayname))
+    #print("-----")
 
 def print_node_tree(node, offset):
     print("%s%s : %s" % (offset, node.kind.name, node.displayname))
