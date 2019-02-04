@@ -53,8 +53,19 @@ def print_node_tree(node):
         if child.kind.name == 'FUNCTION_DECL':
             print("----")
             tree = cindex2node(False, 0, child)
-            for leaf in tree.get_leaves():
-                leaf.p()
+            leaves = tree.get_leaves()
+            #print
+#            for leaf in leaves:
+#                leaf.p()
+            #enumerate all combination of leaves
+            combinations = [x for x in itertools.combinations(leaves, 2)]
+            #print
+            for c in combinations:
+                print('==')
+                c[0].p()
+                c[1].p()
+            
+
 
 if __name__ == "__main__":
     index = Index.create()
