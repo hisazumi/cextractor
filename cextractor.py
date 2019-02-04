@@ -5,7 +5,8 @@ import clang.cindex
 from clang.cindex import Index, Cursor
 
 class Node:
-    def __init__(self, parent, type, content):
+    def __init__(self, parent, level, type, content):
+        self.level = level
         self.parent = parent
         self.type = type
         self.content = content
@@ -14,15 +15,15 @@ class Node:
         self.child = child
 
     def pp(self, offset):
-        print("%s%s : %s" % (offset, self.type, self.content))
+        print("%s%s: %s : %s" % (offset, self.level, self.type, self.content))
         for child in self.child:
             child.pp(offset+' ')
 
-def cindex2node(parent, current):
-    node = Node(parent, current.kind.name, current.displayname)
+def cindex2node(parent, level, current):
+    node = Node(parent, level, current.kind.name, current.displayname)
     children = []
     for child in current.get_children():
-        children.append(cindex2node(node, child))
+        children.append(cindex2node(node, level+1, child))
     node.set_child(children)
     return node
 
@@ -38,7 +39,7 @@ def function_name_split(identifier):
 def print_node_tree(node):
     for child in node.get_children():
         if child.kind.name == 'FUNCTION_DECL':
-            cindex2node(False, child).pp('')
+            cindex2node(False, 0, child).pp('')
 
 if __name__ == "__main__":
     index = Index.create()
