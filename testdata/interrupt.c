@@ -14,6 +14,15 @@ void *interrupt_hander(unsigned hartid, unsigned mcause, void *mepc, void *sp)
     return mepc;
 }
 
+int fact (int N) {
+    if (N <= 1) {
+        return 1;
+    }else{
+        return N*fact(N-1);
+    }
+}
+
+/*
 int main()
 {
     interrupt_count = 0;
@@ -27,3 +36,4 @@ int main()
         local++;
     }
 }
+*/
