@@ -31,6 +31,9 @@ class Node:
                 leaves.extend(child.get_leaves())
             return leaves
 
+    def to_str(self):
+        return self.type + '|' + self.content
+
 def cindex2node(parent, level, current):
     node = Node(parent, level, current.kind.name, current.displayname)
     children = []
@@ -48,25 +51,47 @@ def function_name_split(identifier):
     ls = sum([i.split('_') for i in camel_case_split(identifier)], [])
     return '|'.join(ls)
 
+def enumerate_all_combination_of_leaves(leaves):
+    return [x for x in itertools.combinations(leaves, 2)]
+
+def find_path(combi):
+    start = combi[0]
+    startbuf = []
+    end = combi[1]
+    endbuf = []
+
+    # adjust level
+    if start.level > end.level:
+        for i in range(start.level - end.level):
+            startbuf.append(start.to_str())
+            start = start.parent
+
+    if start.level < end.level:
+        for i in range(end.level - start.level):
+            endbuf.append(end.to_str())
+            end = end.parent
+
+    # up until match
+    for i in range(start.level):
+        if start == end:
+            break
+        startbuf.append(start.to_str())
+        start = start.parent
+        endbuf.append(end.to_str())
+        end = end.parent
+        
+    return '|'.join(startbuf + endbuf)
+
 def print_node_tree(node):
     for child in node.get_children():
         if child.kind.name == 'FUNCTION_DECL':
             print("----")
             tree = cindex2node(False, 0, child)
             leaves = tree.get_leaves()
-            #print
-#            for leaf in leaves:
-#                leaf.p()
-            #enumerate all combination of leaves
-            combinations = [x for x in itertools.combinations(leaves, 2)]
-            #print
-            for c in combinations:
-                print('==')
-                c[0].p()
-                c[1].p()
-            
-
-
+            combis = enumerate_all_combination_of_leaves(leaves)
+            for c in combis:
+                print(find_path(c))
+                            
 if __name__ == "__main__":
     index = Index.create()
     tu = index.parse("testdata/interrupt.c")
