@@ -31,6 +31,9 @@ class Function:
             out = out + ' ' + p.to_str()
         return out
 
+    def to_str_fullpath(self):
+        return self.function_name() + ' ' + ' '.join([p.full_path() for p in self.pairs])
+
     @classmethod
     def cindex2node(klass, parent, level, current):
         node = Node(parent, level, current.kind.name, current.displayname)
@@ -112,6 +115,9 @@ class Pair:
         path = self.path
         return "%s,%d,%s" % (path[0], hash('|'.join(path[1:-2])), path[-1])
 
+    def full_path(self):
+        return ','.join(self.path)
+
 def file2function_array(file):
     tu = Index.create().parse(file)
     return [Function(child) for child in tu.cursor.get_children() \
@@ -132,3 +138,5 @@ if __name__ == "__main__":
     # Body
     for f in file2function_array(args.filename):
         print(f.to_str())
+        if args.path:
+            print(f.to_str_fullpath())
