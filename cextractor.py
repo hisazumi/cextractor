@@ -4,6 +4,41 @@ import itertools
 import clang.cindex
 from clang.cindex import Index, Cursor
 
+class Function:
+    def __init__(self, cindex):
+        self.funcdecl = cindex.displayname
+        self.function_def = Function.cindex2node(False, 0, cindex)
+        self.leaves = self.function_def.get_leaves()
+        self.pairs = self.enumerate_all_combination_of_leaves()
+
+    def enumerate_all_combination_of_leaves(self):
+        return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
+
+    def function_name(self):
+        def camel_case_split(identifier):
+            matches = re.finditer(
+                    '.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
+            return [m.group(0) for m in matches]
+        
+        identifier = self.funcdecl[:self.funcdecl.index('(')]
+        ls = sum([i.split('_') for i in camel_case_split(identifier)], [])
+        return '|'.join(ls)
+
+    def to_str(self):
+        out = self.function_name()
+        for p in self.pairs:
+            out = out + ' ' + p.to_str()
+        return out
+
+    @classmethod
+    def cindex2node(klass, parent, level, current):
+        node = Node(parent, level, current.kind.name, current.displayname)
+        children = []
+        for child in current.get_children():
+            children.append(Function.cindex2node(node, level+1, child))
+        node.set_children(children)
+        return node
+
 class Node:
     def __init__(self, parent, level, type, content):
         self.level = level
@@ -75,49 +110,18 @@ class Pair:
         path = self.find_path()
         return "%s,%d,%s" % (path[0], hash('|'.join(path[1:-2])), path[-1])
 
-class Function:
-    def __init__(self, cindex):
-        self.funcdecl = cindex.displayname
-        self.function_def = Function.cindex2node(False, 0, cindex)
-        self.leaves = self.function_def.get_leaves()
-        self.pairs = self.enumerate_all_combination_of_leaves()
-
-    def enumerate_all_combination_of_leaves(self):
-        return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
-
-    def function_name(self):
-        def camel_case_split(identifier):
-            matches = re.finditer(
-                    '.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
-            return [m.group(0) for m in matches]
-        
-        identifier = self.funcdecl[:self.funcdecl.index('(')]
-        ls = sum([i.split('_') for i in camel_case_split(identifier)], [])
-        return '|'.join(ls)
-
-    def to_str(self):
-        out = self.function_name()
-        for p in self.pairs:
-            out = out + ' ' + p.to_str()
-        return out
-
-    @classmethod
-    def cindex2node(klass, parent, level, current):
-        node = Node(parent, level, current.kind.name, current.displayname)
-        children = []
-        for child in current.get_children():
-            children.append(Function.cindex2node(node, level+1, child))
-        node.set_children(children)
-        return node
-
-def print_node_tree(node):
-    for child in node.get_children():
-        if child.kind.name == 'FUNCTION_DECL':
-            f = Function(child)
-            print(f.to_str())
-            print()
-                            
-if __name__ == "__main__":
+def file2function_array(file):
+    ary = []
     index = Index.create()
-    tu = index.parse("testdata/interrupt.c")
-    print_node_tree(tu.cursor)
+    tu = index.parse(file)
+    for child in tu.cursor.get_children():
+        if child.kind.name == 'FUNCTION_DECL':
+            ary.append(Function(child))
+    return ary
+
+if __name__ == "__main__":
+    fa = file2function_array("testdata/interrupt.c")
+    for f in fa:
+        print(f.to_str())
+        print()
+
