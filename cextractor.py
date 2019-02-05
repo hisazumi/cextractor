@@ -93,12 +93,13 @@ def to_str(combi):
 def print_node_tree(node):
     for child in node.get_children():
         if child.kind.name == 'FUNCTION_DECL':
-            print("----")
+            sys.stdout.write(function_name_split(child.displayname[:child.displayname.index('(')]) + " ")
             tree = cindex2node(False, 0, child)
             leaves = tree.get_leaves()
             combis = enumerate_all_combination_of_leaves(leaves)
             for c in combis:
-                print(to_str(c))
+                sys.stdout.write(to_str(c) + " ")
+            print
                             
 if __name__ == "__main__":
     index = Index.create()
