@@ -36,70 +36,86 @@ class Node:
             return self.type
         else:
             return self.content
-#        return self.type + '|' + self.content
 
-def cindex2node(parent, level, current):
-    node = Node(parent, level, current.kind.name, current.displayname)
-    children = []
-    for child in current.get_children():
-        children.append(cindex2node(node, level+1, child))
-    node.set_children(children)
-    return node
+class Pair:
+    def __init__(self, combi):
+        self.combination = combi
 
-def function_name_split(identifier):
-    def camel_case_split(identifier):
-        matches = re.finditer(
-                '.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
-        return [m.group(0) for m in matches]
-    
-    ls = sum([i.split('_') for i in camel_case_split(identifier)], [])
-    return '|'.join(ls)
+    def find_path(self):
+        combi = self.combination
 
-def enumerate_all_combination_of_leaves(leaves):
-    return [x for x in itertools.combinations(leaves, 2)]
+        start = combi[0]
+        startbuf = []
+        end = combi[1]
+        endbuf = []
 
-def find_path(combi):
-    start = combi[0]
-    startbuf = []
-    end = combi[1]
-    endbuf = []
+        # adjust level
+        if start.level > end.level:
+            for i in range(start.level - end.level):
+                startbuf.append(start.to_str())
+                start = start.parent
 
-    # adjust level
-    if start.level > end.level:
-        for i in range(start.level - end.level):
+        if start.level < end.level:
+            for i in range(end.level - start.level):
+                endbuf.append(end.to_str())
+                end = end.parent
+
+        # up until match
+        for i in range(start.level):
+            if start == end:
+                break
             startbuf.append(start.to_str())
             start = start.parent
-
-    if start.level < end.level:
-        for i in range(end.level - start.level):
             endbuf.append(end.to_str())
             end = end.parent
+            
+        return startbuf + endbuf
 
-    # up until match
-    for i in range(start.level):
-        if start == end:
-            break
-        startbuf.append(start.to_str())
-        start = start.parent
-        endbuf.append(end.to_str())
-        end = end.parent
+    def to_str(self):
+        path = self.find_path()
+        return "%s,%d,%s" % (path[0], hash('|'.join(path[1:-2])), path[-1])
+
+class Function:
+    def __init__(self, cindex):
+        self.funcdecl = cindex.displayname
+        self.function_def = Function.cindex2node(False, 0, cindex)
+        self.leaves = self.function_def.get_leaves()
+        self.pairs = self.enumerate_all_combination_of_leaves()
+
+    def enumerate_all_combination_of_leaves(self):
+        return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
+
+    def function_name(self):
+        def camel_case_split(identifier):
+            matches = re.finditer(
+                    '.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
+            return [m.group(0) for m in matches]
         
-    return startbuf + endbuf
+        identifier = self.funcdecl[:self.funcdecl.index('(')]
+        ls = sum([i.split('_') for i in camel_case_split(identifier)], [])
+        return '|'.join(ls)
 
-def to_str(combi):
-    path = find_path(combi)
-    return "%s,%d,%s" % (path[0], hash('|'.join(path[1:-2])), path[-1])
+    def to_str(self):
+        out = self.function_name()
+        for p in self.pairs:
+            out = out + ' ' + p.to_str()
+        return out
+
+    @classmethod
+    def cindex2node(klass, parent, level, current):
+        node = Node(parent, level, current.kind.name, current.displayname)
+        children = []
+        for child in current.get_children():
+            children.append(Function.cindex2node(node, level+1, child))
+        node.set_children(children)
+        return node
 
 def print_node_tree(node):
     for child in node.get_children():
         if child.kind.name == 'FUNCTION_DECL':
-            sys.stdout.write(function_name_split(child.displayname[:child.displayname.index('(')]) + " ")
-            tree = cindex2node(False, 0, child)
-            leaves = tree.get_leaves()
-            combis = enumerate_all_combination_of_leaves(leaves)
-            for c in combis:
-                sys.stdout.write(to_str(c) + " ")
-            print
+            f = Function(child)
+            print(f.to_str())
+            print()
                             
 if __name__ == "__main__":
     index = Index.create()
