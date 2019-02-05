@@ -111,17 +111,12 @@ class Pair:
         return "%s,%d,%s" % (path[0], hash('|'.join(path[1:-2])), path[-1])
 
 def file2function_array(file):
-    ary = []
-    index = Index.create()
-    tu = index.parse(file)
-    for child in tu.cursor.get_children():
-        if child.kind.name == 'FUNCTION_DECL':
-            ary.append(Function(child))
-    return ary
+    tu = Index.create().parse(file)
+    return [Function(child) for child in tu.cursor.get_children() \
+                if child.kind.name == 'FUNCTION_DECL']
 
 if __name__ == "__main__":
     fa = file2function_array("testdata/interrupt.c")
     for f in fa:
         print(f.to_str())
         print()
-
