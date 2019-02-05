@@ -31,6 +31,10 @@ class Function:
     def to_str_fullpath(self):
         return ' '.join([self.function_name()] + [p.full_path() for p in self.pairs])
 
+    def pp(self):
+        print(self.function_name())
+        self.function_def.pp('')
+
     @classmethod
     def cindex2node(klass, parent, level, current):
         node = Node(parent, level, current.kind.name, current.displayname)
@@ -130,10 +134,16 @@ if __name__ == "__main__":
     argparser.add_argument('-p', '--path',
                            action='store_true',
                            help='show path information')
+    argparser.add_argument('-a', '--ast',
+                           action='store_true',
+                           help='show AST')
     args = argparser.parse_args()
 
     # Body
     for f in file2function_array(args.filename):
-        print(f.to_str())
         if args.path:
             print(f.to_str_fullpath())
+        elif args.ast:
+            f.pp()
+        else:
+            print(f.to_str())
