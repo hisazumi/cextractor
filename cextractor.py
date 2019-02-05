@@ -3,6 +3,7 @@ import re
 import itertools
 import clang.cindex
 from clang.cindex import Index, Cursor
+from argparse import ArgumentParser
 
 class Function:
     def __init__(self, cindex):
@@ -116,7 +117,17 @@ def file2function_array(file):
                 if child.kind.name == 'FUNCTION_DECL']
 
 if __name__ == "__main__":
-    fa = file2function_array("testdata/interrupt.c")
-    for f in fa:
+    # Parse arguments
+    usage = 'Usage: python {} FILE [--path] [--help]'\
+            .format(__file__)
+    argparser = ArgumentParser(usage=usage)
+    argparser.add_argument('filename', type=str,
+                           help='input file')
+    argparser.add_argument('-p', '--path',
+                           action='store_true',
+                           help='show path information')
+    args = argparser.parse_args()
+
+    # Body
+    for f in file2function_array(args.filename):
         print(f.to_str())
-        print()
