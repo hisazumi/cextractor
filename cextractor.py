@@ -76,6 +76,7 @@ class Node:
 class Pair:
     def __init__(self, combi):
         self.combination = combi
+        self.path = self.find_path()
 
     def find_path(self):
         combi = self.combination
@@ -108,7 +109,7 @@ class Pair:
         return startbuf + endbuf
 
     def to_str(self):
-        path = self.find_path()
+        path = self.path
         return "%s,%d,%s" % (path[0], hash('|'.join(path[1:-2])), path[-1])
 
 def file2function_array(file):
