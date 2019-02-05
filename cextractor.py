@@ -26,13 +26,10 @@ class Function:
         return '|'.join(ls)
 
     def to_str(self):
-        out = self.function_name()
-        for p in self.pairs:
-            out = out + ' ' + p.to_str()
-        return out
+        return ' '.join([self.function_name()] + [p.to_str() for p in self.pairs])
 
     def to_str_fullpath(self):
-        return self.function_name() + ' ' + ' '.join([p.full_path() for p in self.pairs])
+        return ' '.join([self.function_name()] + [p.full_path() for p in self.pairs])
 
     @classmethod
     def cindex2node(klass, parent, level, current):
