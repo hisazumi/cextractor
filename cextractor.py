@@ -66,7 +66,7 @@ class Pair:
                 break
             startbuf.append(start.to_str())
             start = start.parent
-            endbuf.append(end.to_str())
+            endbuf.insert(0, end.to_str())
             end = end.parent
             
         return startbuf + endbuf
