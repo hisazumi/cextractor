@@ -32,7 +32,11 @@ class Node:
             return leaves
 
     def to_str(self):
-        return self.type + '|' + self.content
+        if self.content == '':
+            return self.type
+        else:
+            return self.content
+#        return self.type + '|' + self.content
 
 def cindex2node(parent, level, current):
     node = Node(parent, level, current.kind.name, current.displayname)
@@ -80,7 +84,11 @@ def find_path(combi):
         endbuf.append(end.to_str())
         end = end.parent
         
-    return '|'.join(startbuf + endbuf)
+    return startbuf + endbuf
+
+def to_str(combi):
+    path = find_path(combi)
+    return "%s,%d,%s" % (path[0], hash('|'.join(path[1:-2])), path[-1])
 
 def print_node_tree(node):
     for child in node.get_children():
@@ -90,7 +98,7 @@ def print_node_tree(node):
             leaves = tree.get_leaves()
             combis = enumerate_all_combination_of_leaves(leaves)
             for c in combis:
-                print(find_path(c))
+                print(to_str(c))
                             
 if __name__ == "__main__":
     index = Index.create()
