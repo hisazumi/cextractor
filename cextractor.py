@@ -31,7 +31,11 @@ class Function:
         return len(self.pairs) > 0
 
     def to_str(self):
-        return ' '.join([self.function_name()] + [p.to_str() for p in self.pairs])
+        pathes = ' '.join([p.to_str() for p in self.pairs])
+        if pathes.isspace():
+            return ''
+        else:
+            return '%s %s' % (self.function_name(), pathes)
 
     def to_str_fullpath(self):
         return ' '.join([self.function_name()] + [p.full_path() for p in self.pairs])
