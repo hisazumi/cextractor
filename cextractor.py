@@ -108,7 +108,7 @@ class Pair:
 
         if start.level < end.level:
             for i in range(end.level - start.level):
-                endbuf.append(end.to_str())
+                endbuf.insert(0, end.to_str())
                 end = end.parent
 
         # up until match
