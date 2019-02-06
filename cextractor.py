@@ -27,6 +27,9 @@ class Function:
         ls = sum([i.split('_') for i in camel_case_split(identifier)], [])
         return '|'.join(ls)
 
+    def has_pair(self):
+        return len(self.pairs) > 0
+
     def to_str(self):
         return ' '.join([self.function_name()] + [p.to_str() for p in self.pairs])
 
@@ -149,4 +152,5 @@ if __name__ == "__main__":
         elif args.ast:
             f.pp()
         else:
-            print(f.to_str())
+            if f.has_pair():
+                print(f.to_str())
