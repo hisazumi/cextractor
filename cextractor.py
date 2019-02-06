@@ -39,7 +39,7 @@ class Function:
 
     @classmethod
     def cindex2node(klass, parent, level, current):
-        node = Node(parent, level, current.kind.name, current.displayname)
+        node = Node(parent, level, current)
         children = []
         for child in current.get_children():
             if child.kind.name not in klass.SKIP_KINDNAME:
@@ -48,11 +48,11 @@ class Function:
         return node
 
 class Node:
-    def __init__(self, parent, level, type, content):
+    def __init__(self, parent, level, cursor):
         self.level = level
         self.parent = parent
-        self.type = type
-        self.content = content
+        self.type = cursor.kind.name
+        self.content = cursor.displayname
 
     def set_children(self, children):
         self.children = children
