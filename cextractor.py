@@ -119,8 +119,12 @@ class Pair:
         return startbuf + endbuf
 
     def to_str(self):
-        path = self.path
-        return "%s,%d,%s" % (path[0], hash('|'.join(path[1:-2])), path[-1])
+        path = [p.replace(' ', '_') for p in self.path]
+        pathid = hash('|'.join(path[1:-2]))
+        if pathid == 0:
+            return ''
+        else:
+            return "%s,%d,%s" % (path[0], pathid, path[-1])
 
     def full_path(self):
         return ','.join(self.path)
