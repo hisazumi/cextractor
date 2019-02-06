@@ -6,6 +6,8 @@ from clang.cindex import Index, Cursor
 from argparse import ArgumentParser
 
 class Function:
+    SKIP_KINDNAME = ['PARM_DECL']
+
     def __init__(self, cindex):
         self.funcdecl = cindex.displayname
         self.function_def = Function.cindex2node(False, 0, cindex)
@@ -40,7 +42,8 @@ class Function:
         node = Node(parent, level, current.kind.name, current.displayname)
         children = []
         for child in current.get_children():
-            children.append(Function.cindex2node(node, level+1, child))
+            if child.kind.name not in klass.SKIP_KINDNAME:
+                children.append(Function.cindex2node(node, level+1, child))
         node.set_children(children)
         return node
 
