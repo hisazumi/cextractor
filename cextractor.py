@@ -37,11 +37,21 @@ class Function:
             print(' ', end='')
             p.print_paths()
 
+    def get_paths(self):
+        return ' '.join([self.function_name()] \
+            + [p.get_paths() for p in self.pairs])
+
     def print_fullpaths(self):
         print(self.function_name(), end='')
         for p in self.pairs:
             print(' ', end='')
             p.print_fullpaths()
+
+    def get_pathdict(self):
+        dict = {}
+        for p in self.pairs:
+            dict[p.pathid] = p.get_fullpaths()
+        return dict
 
     def print_ast(self):
         print(self.function_name())
@@ -91,6 +101,7 @@ class Pair:
     def __init__(self, combi):
         self.combination = combi
         self.path = [p.replace(' ', '_') for p in self.find_path()]
+        self.pathid = hash('|'.join(self.path[1:-2]))
 
     def is_valid(self):
         return len(self.path) >= 3
@@ -126,12 +137,19 @@ class Pair:
         return startbuf + endbuf
 
     def print_paths(self):
-        path = self.path
-        pathid = hash('|'.join(path[1:-2]))
-        print("%s,%d,%s" % (path[0], pathid, path[-1]), end='')
+        print(self.get_paths(), end='')
+
+    def get_paths(self):
+        return "%s,%d,%s" % (self.path[0], self.pathid, self.path[-1])
 
     def print_fullpaths(self):
-        print(','.join(self.path))
+        print(self.get_fullpaths())
+
+    def get_fullpaths(self):
+        return ','.join(self.path)
+
+    def get_pathid(self):
+        return self.pathid
 
 def file2function_array(file):
     tu = Index.create().parse(file)
