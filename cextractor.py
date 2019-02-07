@@ -24,7 +24,8 @@ class Function:
             return [m.group(0) for m in matches]
         
         identifier = self.funcdecl[:self.funcdecl.index('(')]
-        ls = sum([i.split('_') for i in camel_case_split(identifier)], [])
+        normed_id = identifier.strip('_').replace('__', '_')
+        ls = sum([i.split('_') for i in camel_case_split(normed_id)], [])
         return '|'.join(ls)
 
     def has_pair(self):
