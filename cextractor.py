@@ -37,8 +37,11 @@ class Function:
             print(' ', end='')
             p.print_paths()
 
-    def to_str_fullpath(self):
-        return ' '.join([self.function_name()] + [p.full_path() for p in self.pairs])
+    def print_fullpaths(self):
+        print(self.function_name(), end='')
+        for p in self.pairs:
+            print(' ', end='')
+            p.print_fullpaths()
 
     def print_ast(self):
         print(self.function_name())
@@ -63,9 +66,6 @@ class Node:
 
     def set_children(self, children):
         self.children = children
-
-    def p(self):
-        print("%s : %s" % (self.type, self.content))
 
     def print_ast(self, offset):
         print("%s%s: %s : %s" % (offset, self.level, self.type, self.content))
@@ -130,8 +130,8 @@ class Pair:
         pathid = hash('|'.join(path[1:-2]))
         print("%s,%d,%s" % (path[0], pathid, path[-1]), end='')
 
-    def full_path(self):
-        return ','.join(self.path)
+    def print_fullpaths(self):
+        print(','.join(self.path))
 
 def file2function_array(file):
     tu = Index.create().parse(file)
@@ -156,7 +156,7 @@ if __name__ == "__main__":
     # Body
     for f in file2function_array(args.filename):
         if args.path:
-            print(f.to_str_fullpath())
+            f.print_fullpaths()
         elif args.ast:
             f.print_ast()
         else:
