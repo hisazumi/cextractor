@@ -82,7 +82,7 @@ class Node:
             return leaves
 
     def to_str(self):
-        if self.content == '' or self.type == 'STRING_LITERAL':
+        if self.content == '' or self.type == 'STRING_LITERAL' or len(self.children) > 0:
             return self.type
         else:
             return self.content
