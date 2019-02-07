@@ -40,9 +40,9 @@ class Function:
     def to_str_fullpath(self):
         return ' '.join([self.function_name()] + [p.full_path() for p in self.pairs])
 
-    def pp(self):
+    def print_ast(self):
         print(self.function_name())
-        self.function_def.pp('')
+        self.function_def.print_ast('')
 
     @classmethod
     def cindex2node(klass, parent, level, current):
@@ -67,7 +67,7 @@ class Node:
     def p(self):
         print("%s : %s" % (self.type, self.content))
 
-    def pp(self, offset):
+    def print_ast(self, offset):
         print("%s%s: %s : %s" % (offset, self.level, self.type, self.content))
         for child in self.children:
             child.pp(offset+' ')
@@ -158,7 +158,7 @@ if __name__ == "__main__":
         if args.path:
             print(f.to_str_fullpath())
         elif args.ast:
-            f.pp()
+            f.print_ast()
         else:
             if f.has_pair():
                 print(f.to_str())
