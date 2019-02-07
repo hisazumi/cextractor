@@ -70,7 +70,7 @@ class Node:
     def print_ast(self, offset):
         print("%s%s: %s : %s" % (offset, self.level, self.type, self.content))
         for child in self.children:
-            child.pp(offset+' ')
+            child.print_ast(offset+' ')
 
     def get_leaves(self):
         if len(self.children) == 0:
