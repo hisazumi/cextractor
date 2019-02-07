@@ -16,13 +16,13 @@
 #   recommended to use a multi-core machine for the preprocessing 
 #   step and set this value to the number of cores.
 # PYTHON - python3 interpreter alias.
-DATASET_NAME=linuxfs
+DATASET_NAME=linux
 MAX_CONTEXTS=200
 WORD_VOCAB_SIZE=1301136
 PATH_VOCAB_SIZE=911417
 TARGET_VOCAB_SIZE=261245
 NUM_THREADS=64
-PYTHON=python3.5
+PYTHON=python
 TRAIN_DATA_FILE=data/${DATASET_NAME}/raw.txt
 TEST_DATA_FILE=data/${DATASET_NAME}/test.txt
 VAL_DATA_FILE=data/${DATASET_NAME}/valid.txt

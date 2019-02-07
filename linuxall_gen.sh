@@ -6,7 +6,7 @@ mkdir -p data/linux
 
 for dir in $DIRS
 do
-    output=data/linux/$dir.txt
+    output=data/linux/raw/$dir.txt
     rm -f $output
     for file in `find ../linux-4.20/$dir -name '*.c'`
     do
