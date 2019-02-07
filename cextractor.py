@@ -12,7 +12,7 @@ class Function:
         self.funcdecl = cindex.displayname
         self.function_def = Function.cindex2node(False, 0, cindex)
         self.leaves = self.function_def.get_leaves()
-        self.pairs = self.enumerate_all_combination_of_leaves()
+        self.pairs = [p for p in self.enumerate_all_combination_of_leaves() if p.is_valid()]
 
     def enumerate_all_combination_of_leaves(self):
         return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
@@ -30,12 +30,11 @@ class Function:
     def has_pair(self):
         return len(self.pairs) > 0
 
-    def to_str(self):
-        pathes = ' '.join([p.to_str() for p in self.pairs])
-        if pathes.isspace():
-            return ''
-        else:
-            return '%s %s' % (self.function_name(), pathes)
+    def print_paths(self):
+        print(self.function_name(), end='')
+        for p in self.pairs:
+            print(' ', end='')
+            p.print_paths()
 
     def to_str_fullpath(self):
         return ' '.join([self.function_name()] + [p.full_path() for p in self.pairs])
@@ -90,7 +89,10 @@ class Node:
 class Pair:
     def __init__(self, combi):
         self.combination = combi
-        self.path = self.find_path()
+        self.path = [p.replace(' ', '_') for p in self.find_path()]
+
+    def is_valid(self):
+        return len(self.path) >= 3
 
     def find_path(self):
         combi = self.combination
@@ -122,13 +124,10 @@ class Pair:
             
         return startbuf + endbuf
 
-    def to_str(self):
-        path = [p.replace(' ', '_') for p in self.path]
+    def print_paths(self):
+        path = self.path
         pathid = hash('|'.join(path[1:-2]))
-        if pathid == 0:
-            return ''
-        else:
-            return "%s,%d,%s" % (path[0], pathid, path[-1])
+        print("%s,%d,%s" % (path[0], pathid, path[-1]), end='')
 
     def full_path(self):
         return ','.join(self.path)
@@ -161,4 +160,5 @@ if __name__ == "__main__":
             f.print_ast()
         else:
             if f.has_pair():
-                print(f.to_str())
+                f.print_paths()
+                print()
