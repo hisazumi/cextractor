@@ -20,15 +20,10 @@ class Function:
         return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
 
     def function_name(self):
-        def camel_case_split(identifier):
-            matches = re.finditer(
-                    '.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
-            return [m.group(0) for m in matches]
-        
-        identifier = self.funcdecl[:self.funcdecl.index('(')]
-        normed_id = identifier.strip('_').replace('__', '_')
-        ls = sum([i.split('_') for i in camel_case_split(normed_id)], [])
-        return '|'.join(ls)
+        name = self.funcdecl[:self.funcdecl.index('(')]
+        splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
+        filtered = [x for x in splitted if len(x) > 0] 
+        return '|'.join(filtered)
 
     def has_pair(self):
         return len(self.pairs) > 0
@@ -95,11 +90,17 @@ class Node:
                 leaves.extend(child.get_leaves())
             return leaves
 
+    @classmethod
+    def normalize_name(klass, name):
+        splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
+        filtered = [x.lower() for x in splitted if len(x) > 0]
+        return ''.join(filtered)
+
     def to_str(self):
         if self.content == '' or self.type == 'STRING_LITERAL' or len(self.children) > 0:
             return self.type
         else:
-            return self.content
+            return Node.normalize_name(self.content)
 
 class Pair:
     def __init__(self, combi):
