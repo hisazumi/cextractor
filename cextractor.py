@@ -39,6 +39,9 @@ class Function:
     def to_str_with_padding(self):
         return self.to_str() + ' ' * (200-len(self.pairs))
 
+    def print_for_prediction(self):
+        print(self.to_str_with_padding())
+
     def print_fullpaths(self):
         print(self.function_name(), end='')
         for p in self.pairs:
@@ -173,6 +176,9 @@ if __name__ == "__main__":
     argparser.add_argument('-a', '--ast',
                            action='store_true',
                            help='show AST')
+    argparser.add_argument('-r', '--predict',
+                           action='store_true',
+                           help='show output for prediction')
     args = argparser.parse_args()
 
     # Body
@@ -181,6 +187,9 @@ if __name__ == "__main__":
             f.print_fullpaths()
         elif args.ast:
             f.print_ast()
+        elif args.predict:
+            if f.has_pair():
+                f.print_for_prediction()
         else:
             if f.has_pair():
                 f.print_paths()
