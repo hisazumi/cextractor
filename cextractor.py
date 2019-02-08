@@ -33,12 +33,10 @@ class Function:
         for p in self.pairs:
             print(' ', end='')
             p.print_paths()
-        print(' ' * (MAX_CONTEXTS - len(self.pairs)))
 
     def get_paths(self):
         return ' '.join([self.function_name()] \
-            + [p.get_paths() for p in self.pairs]) \
-            + ' ' * (MAX_CONTEXTS - len(self.pairs))
+            + [p.get_paths() for p in self.pairs])
 
     def print_fullpaths(self):
         print(self.function_name(), end='')
