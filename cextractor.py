@@ -107,7 +107,7 @@ class Pair:
         self.pathid = hash('|'.join(self.path[1:-2]))
 
     def is_valid(self):
-        return 3 <= len(self.path) and len(self.path) <= MAX_CONTEXTS
+        return 3 <= len(self.path)
 
     def find_path(self):
         combi = self.combination
