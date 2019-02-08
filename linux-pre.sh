@@ -30,6 +30,7 @@ VAL_DATA_FILE=data/${DATASET_NAME}/valid.txt
 mkdir -p data
 mkdir -p data/${DATASET_NAME}
 
+# Preprocessing
 TARGET_HISTOGRAM_FILE=data/${DATASET_NAME}/${DATASET_NAME}.histo.tgt.c2v
 ORIGIN_HISTOGRAM_FILE=data/${DATASET_NAME}/${DATASET_NAME}.histo.ori.c2v
 PATH_HISTOGRAM_FILE=data/${DATASET_NAME}/${DATASET_NAME}.histo.path.c2v
@@ -44,3 +45,8 @@ ${PYTHON} ../code2vec/preprocess.py --train_data ${TRAIN_DATA_FILE} --test_data 
   --target_vocab_size ${TARGET_VOCAB_SIZE} --word_histogram ${ORIGIN_HISTOGRAM_FILE} \
   --path_histogram ${PATH_HISTOGRAM_FILE} --target_histogram ${TARGET_HISTOGRAM_FILE} \
   --output_name data/${DATASET_NAME}/${DATASET_NAME}
+
+# If all went well, the raw data files can be deleted, because preprocess.py creates new files 
+# with truncated and padded number of paths for each example.
+#rm ${TRAIN_DATA_FILE} ${VAL_DATA_FILE} ${TEST_DATA_FILE} ${TARGET_HISTOGRAM_FILE} ${ORIGIN_HISTOGRAM_FILE} \
+#  ${PATH_HISTOGRAM_FILE}
