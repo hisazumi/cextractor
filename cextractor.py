@@ -5,6 +5,8 @@ import clang.cindex
 from clang.cindex import Index, Cursor
 from argparse import ArgumentParser
 
+MAX_CONTEXTS=200
+
 class Function:
     SKIP_KINDNAME = ['PARM_DECL']
 
@@ -36,10 +38,12 @@ class Function:
         for p in self.pairs:
             print(' ', end='')
             p.print_paths()
+        print(' ' * (MAX_CONTEXTS - len(self.pairs)))
 
     def get_paths(self):
         return ' '.join([self.function_name()] \
-            + [p.get_paths() for p in self.pairs])
+            + [p.get_paths() for p in self.pairs]) \
+            + ' ' * (MAX_CONTEXTS - len(self.pairs))
 
     def print_fullpaths(self):
         print(self.function_name(), end='')
@@ -104,7 +108,7 @@ class Pair:
         self.pathid = hash('|'.join(self.path[1:-2]))
 
     def is_valid(self):
-        return len(self.path) >= 3
+        return 3 <= len(self.path) and len(self.path) <= MAX_CONTEXTS
 
     def find_path(self):
         combi = self.combination
