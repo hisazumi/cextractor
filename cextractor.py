@@ -5,8 +5,6 @@ import clang.cindex
 from clang.cindex import Index, Cursor
 from argparse import ArgumentParser
 
-MAX_CONTEXTS=200
-
 class Function:
     SKIP_KINDNAME = ['PARM_DECL']
 
@@ -34,9 +32,12 @@ class Function:
             print(' ', end='')
             p.print_paths()
 
-    def get_paths(self):
+    def to_str(self):
         return ' '.join([self.function_name()] \
-            + [p.get_paths() for p in self.pairs])
+            + [p.get_paths() for p in self.pairs[:200]])
+
+    def to_str_with_padding(self):
+        return self.to_str() + ' ' * (200-len(self.pairs))
 
     def print_fullpaths(self):
         print(self.function_name(), end='')
