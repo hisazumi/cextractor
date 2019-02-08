@@ -1,4 +1,4 @@
-EXTCMD='python ../cextractor/cextractor.py'
+EXTCMD='python -W ignore ../cextractor/cextractor.py'
 
 DIRS='crypto include lib scripts usr arch drivers   init     mm       security  virt block   firmware  ipc      net      sound certs   fs        kernel   samples  tools'
 

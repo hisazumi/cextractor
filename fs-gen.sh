@@ -2,7 +2,7 @@ rm -f data/linuxfs/raw.txt
 rm -f data/linuxfs/ext2.txt
 rm -f data/linuxfs/ext4.txt
 
-EXTCMD='python ../cextractor/cextractor.py'
+EXTCMD='python -W ignore ../cextractor/cextractor.py'
 
 for dir in `echo ../linux-4.20/fs/*fs`
 do
