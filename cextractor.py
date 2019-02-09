@@ -107,11 +107,11 @@ class Node:
 class Pair:
     def __init__(self, combi):
         self.combination = combi
-        self.path = [p.replace(' ', '_') for p in self.find_path()]
+        self.path = self.find_path()
         self.pathid = hash('|'.join(self.path[1:-2]))
 
     def is_valid(self):
-        return 3 <= len(self.path)
+        return 4 <= len(self.path)
 
     def find_path(self):
         combi = self.combination
