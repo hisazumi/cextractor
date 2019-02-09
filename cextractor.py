@@ -94,7 +94,7 @@ class Node:
 
     @classmethod
     def normalize_name(klass, name):
-        splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
+        splitted = re.split("(?<=[a-z])(?=[A-Z])|_|\s|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
         filtered = [x.lower() for x in splitted if len(x) > 0]
         return ''.join(filtered)
 
