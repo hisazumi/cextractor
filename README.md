@@ -3,8 +3,16 @@
 ## Setup
 cextractor requires the clang python binding.
 
-Install the binding according to instructions such as:
-Mac: http://asdm.hatenablog.com/entry/2015/01/08/170707
+### for Mac
+
+install llvm
+> brew install llvm
+
+install clang binding
+> pip3 install clang
+
+and set LD_LIBRARY_PATH
+> export LD_LIBRARY_PATH=/usr/local/opt/llvm/lib
 
 ## How to Use
 
