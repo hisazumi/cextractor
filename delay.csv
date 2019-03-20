@@ -1,0 +1,17 @@
+,name,count
+0,read,1.0
+1,current,1.0
+2,timer,4.0
+3,EXPORT,1.0
+4,SYMBOL,1.0
+5,GPL,1.0
+6,export,1.0
+7,symbol,1.0
+8,gpl(),1.0
+9,cyc,1.0
+10,to,1.0
+11,ns,1.0
+12,delay,1.0
+13,const,1.0
+14,udelay,2.0
+15,xloops,1.0

@@ -255,8 +255,10 @@ if __name__ == "__main__":
 
         # データフレームの結合　横に
         cext = pd.concat([df1, df2], axis=1)
-
-        cext.to_csv("cextractor.csv")
+        fname = args.filename
+        # 区切り
+        fname2 = re.split('[./]', fname)
+        cext.to_csv(fname2[3] + ".csv")
 
 
  
