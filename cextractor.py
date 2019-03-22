@@ -1,6 +1,7 @@
 import sys
 import re
 import itertools
+import json
 import clang.cindex
 from clang.cindex import Index, Cursor
 from argparse import ArgumentParser
@@ -229,9 +230,8 @@ if __name__ == "__main__":
         for f in file2function_array(args.filename):
             f.count_name(names)
 
-        for k,v in names.items():
-            print("%s:%d" % (k, v), end=' ')
-        print()
+        print(json.dumps(names))     
+        
     else:
         for f in file2function_array(args.filename):
             if f.has_pair():
