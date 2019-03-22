@@ -231,7 +231,6 @@ if __name__ == "__main__":
             f.count_name(names)
 
         print(json.dumps(names))     
-        
     else:
         for f in file2function_array(args.filename):
             if f.has_pair():
