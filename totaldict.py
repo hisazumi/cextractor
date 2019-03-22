@@ -8,10 +8,13 @@ if __name__ == "__main__":
     files = sys.argv[1:]
 
     for file in files:
-        with open(file) as fd:
-            data = json.load(fd)
+        try:
+            with open(file) as fd:
+                data = json.load(fd)
 
-            for k,v in data.items():
-                names[k] += v
+                for k,v in data.items():
+                    names[k] += v
+        except Exception as e:
+            print(e)
 
     print(json.dumps(names))
