@@ -128,7 +128,7 @@ class Node:
             return Node.normalize_name(self.content)
 
     def add_set_wo_normalize(self, s):
-        if self.content == '' or self.type == 'STRING_LITERAL' or len(self.children) > 0:
+        if self.content == '' or self.type == 'STRING_LITERAL' or self.type == 'FUNCTION_DECL' or len(self.children) > 0:
             pass # s.add(self.type)
         else:
             for n in Node.split_name(self.content):
