@@ -13,7 +13,7 @@ if __name__ == "__main__":
                 data = json.load(fd)
 
                 for k,v in data.items():
-                    names[k] += v
+                    names[k] += 1
         except Exception as e:
             print(e)
 
