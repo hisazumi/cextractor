@@ -7,6 +7,8 @@ from clang.cindex import Index, Cursor
 from argparse import ArgumentParser
 from collections import defaultdict
 
+filter_dictionary = {}
+
 class Function:
     SKIP_KINDNAME = ['PARM_DECL']
 
@@ -20,11 +22,14 @@ class Function:
     def enumerate_all_combination_of_leaves(self):
         return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
 
-    def function_name_split(self):
+    def function_name_split(self, filter_dict=True):
         name = self.funcdecl[:self.funcdecl.index('(')]
         splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
-        filtered = [x for x in splitted if len(x) > 0] 
-        return filtered
+        filtered = [x for x in splitted if len(x) > 0]
+        if filter_dict:
+            return [x for x in filtered if x in filter_dictionary]
+        else:
+            return filtered
     
     def function_name(self):
         return '|'.join(self.function_name_split())
@@ -39,7 +44,7 @@ class Function:
             p.print_paths()
 
     def count_name(self, names):
-        for n in self.function_name_split():
+        for n in self.function_name_split(True):
             names[n] += 1
         self.function_def.count_name(names)
 
@@ -112,10 +117,13 @@ class Node:
                 child.count_name(s)
 
     @classmethod
-    def split_name(klass, name):
+    def split_name(klass, name, filter_dict=True):
         splitted = re.split("(?<=[a-z])(?=[A-Z])|_|\s|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
         filtered = [x.lower() for x in splitted if len(x) > 0]
-        return filtered
+        if filter_dict:
+            return [x for x in filtered if x in filter_dictionary]
+        else:
+            return filtered
 
     @classmethod
     def normalize_name(klass, name):
@@ -131,7 +139,7 @@ class Node:
         if self.content == '' or self.type == 'STRING_LITERAL' or self.type == 'FUNCTION_DECL' or len(self.children) > 0:
             pass # s.add(self.type)
         else:
-            for n in Node.split_name(self.content):
+            for n in Node.split_name(self.content, False):
                 s[n] += 1
 
 class Pair:
@@ -193,6 +201,11 @@ def file2function_array(file):
     return [Function(child) for child in tu.cursor.get_children() \
                 if child.kind.name == 'FUNCTION_DECL']
 
+def read_filter_dictionary(file):
+    with open(file) as file:
+        global filter_dictionary
+        filter_dictionary = json.load(file)
+
 if __name__ == "__main__":
     # Parse arguments
     usage = 'Usage: python {} FILE [--path] [--help]'\
@@ -212,9 +225,14 @@ if __name__ == "__main__":
     argparser.add_argument('-r', '--predict',
                            action='store_true',
                            help='show output for prediction')
+    argparser.add_argument('-f', '--filter', 
+                           action='store', type=str,
+                           help='dictionary for filtering identifier')
     args = argparser.parse_args()
 
     # Body
+    read_filter_dictionary("../linux-4.20/filter.dict")
+
     if args.path:
         for f in file2function_array(args.filename):
             f.print_fullpaths()
