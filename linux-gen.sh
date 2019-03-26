@@ -1,16 +1,9 @@
-EXTCMD='python -W ignore ../cextractor/cextractor.py'
+#!/bin/sh 
 
-DIRS='crypto include lib scripts usr arch drivers   init     mm       security  virt block   firmware  ipc      net      sound certs   fs        kernel   samples  tools'
+DIRS='crypto include lib scripts usr arch drivers init mm security virt block firmware ipc net sound certs fs kernel samples tools'
 
+mkdir -p data
 mkdir -p data/linux
+mkdir -p data/linux/raw
 
-for dir in $DIRS
-do
-    output=data/linux/raw/$dir.txt
-    rm -f $output
-    for file in $(find ../linux-4.20/$dir -name '*.c')
-    do
-        $EXTCMD $file >> $output
-    done
-done
-
+parallel --jobs 10 sh linux-gendir.sh ::: $DIRS
