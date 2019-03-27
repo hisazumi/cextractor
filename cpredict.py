@@ -52,7 +52,7 @@ if __name__ == '__main__':
     with tf.device('/cpu:0'):
         config = Config.get_default_config(args)
         model = Model(config)
-        results = model.predict([f.to_str_with_padding() for f in funcs if f.has_pair()])
+        results, code_vector = model.predict([f.to_str_with_padding() for f in funcs if f.has_pair()])
 
     prediction_results = common.parse_results(results, h2p_dict)
 
@@ -64,5 +64,5 @@ if __name__ == '__main__':
         for attention_obj in method_prediction.attention_paths:
             print('%f\tcontext: %s,%s,%s' % (
             attention_obj['score'], attention_obj['token1'], attention_obj['path'], attention_obj['token2']))
-
+            
     model.close_session()
