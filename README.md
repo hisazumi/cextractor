@@ -30,7 +30,14 @@ Extract pathes
 
 Concatinate all pathes into one (or two or more) file
 
-> cat $(find ../linux-4.20 -name '*.path') > data/linux/raw.txt
+for learning
+> find ../linux-4.20 -name '*.path' | xargs cat > data/linux/raw.txt
+
+for validating
+> find ../freebsd/sys/kern -name '*.path' | xargs cat > data/linux/valid.txt
+
+for testing
+> find ../freebsd/sys/i386 -name '*.path' | xargs cat > data/linux/test.txt
 
 
 Show Help
