@@ -22,11 +22,11 @@ class Function:
     def enumerate_all_combination_of_leaves(self):
         return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
 
-    def function_name_split(self, filter_dict=True):
+    def function_name_split(self):
         name = self.funcdecl[:self.funcdecl.index('(')]
         splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
         filtered = [x for x in splitted if len(x) > 0]
-        if filter_dict:
+        if len(filter_dictionary) > 0:
             return [x for x in filtered if x in filter_dictionary]
         else:
             return filtered
@@ -44,7 +44,7 @@ class Function:
             p.print_paths()
 
     def count_name(self, names):
-        for n in self.function_name_split(True):
+        for n in self.function_name_split():
             names[n] += 1
         self.function_def.count_name(names)
 
@@ -117,10 +117,10 @@ class Node:
                 child.count_name(s)
 
     @classmethod
-    def split_name(klass, name, filter_dict=True):
+    def split_name(klass, name):
         splitted = re.split("(?<=[a-z])(?=[A-Z])|_|\s|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
         filtered = [x.lower() for x in splitted if len(x) > 0]
-        if filter_dict:
+        if len(filter_dictionary) > 0:
             return [x for x in filtered if x in filter_dictionary]
         else:
             return filtered
@@ -139,7 +139,7 @@ class Node:
         if self.content == '' or self.type == 'STRING_LITERAL' or self.type == 'FUNCTION_DECL' or len(self.children) > 0:
             pass # s.add(self.type)
         else:
-            for n in Node.split_name(self.content, False):
+            for n in Node.split_name(self.content):
                 s[n] += 1
 
 class Pair:
@@ -240,7 +240,7 @@ if __name__ == "__main__":
         for f in file2function_array(args.filename):
             f.print_ast()
     elif args.predict:
-        read_filter_dictionary("../linux-4.20/filter.dict")
+        #read_filter_dictionary("../linux-4.20/filter.dict")
         for f in file2function_array(args.filename):
             if f.has_pair():
                 f.print_for_prediction()
