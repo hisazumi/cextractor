@@ -232,15 +232,15 @@ if __name__ == "__main__":
 
     # Body
     if args.path:
-        read_filter_dictionary("../linux-4.20/filter.dict")
+        read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
             f.print_fullpaths()
     elif args.ast:
-        read_filter_dictionary("../linux-4.20/filter.dict")
+        read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
             f.print_ast()
     elif args.predict:
-        #read_filter_dictionary("../linux-4.20/filter.dict")
+        read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
             if f.has_pair():
                 f.print_for_prediction()
@@ -251,7 +251,7 @@ if __name__ == "__main__":
 
         print(json.dumps(names))     
     else:
-        read_filter_dictionary("../linux-4.20/filter.dict")
+        read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
             if f.has_pair():
                 f.print_paths()

@@ -16,6 +16,23 @@ and set LD_LIBRARY_PATH
 
 ## How to Use
 
+Make dictionary
+
+> ./dictmake.sh ../linux-4.20
+
+Filtering terms 
+
+> python dictfilter.py ../linux-4.20/total.dict > ../linux-4.20/filter.dict
+
+Extract pathes
+
+> ./extract.sh ../linux-4.20
+
+Concatinate all pathes into one (or two or more) file
+
+> cat $(find ../linux-4.20 -name '*.path') > data/linux/raw.txt
+
+
 Show Help
 
 > python cextractor.py --help
