@@ -35,6 +35,8 @@ if __name__ == '__main__':
                         help="save word (token) vectors in word2vec format")
     parser.add_argument('--save_t2v', dest='save_t2v', required=False,
                         help="save target vectors in word2vec format")
+    parser.add_argument('--export_code_vectors', action='store_true', required=False,
+                        help="export code vectors for the given examples")
     parser.add_argument('--release', action='store_true',
                         help='if specified and loading a trained model, release the loaded model for a lower model '
                              'size.')
@@ -50,7 +52,7 @@ if __name__ == '__main__':
     with tf.device('/cpu:0'):
         config = Config.get_default_config(args)
         model = Model(config)
-        results = model.predict([f.to_str_with_padding() for f in funcs if f.has_pair()])
+        results, code_vector = model.predict([f.to_str_with_padding() for f in funcs if f.has_pair()])
 
     prediction_results = common.parse_results(results, h2p_dict)
 
@@ -62,5 +64,5 @@ if __name__ == '__main__':
         for attention_obj in method_prediction.attention_paths:
             print('%f\tcontext: %s,%s,%s' % (
             attention_obj['score'], attention_obj['token1'], attention_obj['path'], attention_obj['token2']))
-
+            
     model.close_session()
