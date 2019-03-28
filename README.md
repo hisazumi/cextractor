@@ -32,6 +32,9 @@ Concatinate all pathes into one (or two or more) file
 
 > cat $(find ../linux-4.20 -name '*.path') > data/linux/raw.txt
 
+Preprocess extracted pathes
+
+> ./preprocess.sh linux
 
 Show Help
 
