@@ -8,16 +8,24 @@ cextractor requires the clang python binding.
 ### for Mac
 
 【install llvm】
+
 brew install llvm
+
 > llvm(コンパイラのバックエンド)をインストール。
 
-【install clang binding】	
+【install clang binding】
+
 pip3 install clang
+
 > clang(コンパイラのフロントエンド)をインストール。読み方はクラン。
 
-and set LD_LIBRARY_PATH
-> export LD_LIBRARY_PATH=/usr/local/opt/llvm/lib
+
+ 【and set LD_LIBRARY_PATH】
+
+export LD_LIBRARY_PATH=/usr/local/opt/llvm/lib
+
 > パスの設定。ライブラリの場所をlibに指定。
+
 
 ## How to Use
 
