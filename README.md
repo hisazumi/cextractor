@@ -39,13 +39,13 @@ dl-box.localにssh接続。
 <br />
 <br />
 
-【Directrory】
+【Directrory】  
 cextractorまで行く。
 
 	/data2/c2v/cextractor
 
 
-【Make dictionary】
+【Make dictionary】  
 一つ前に戻ってlinux-4.20に./dictmake.shの結果を出力 ここに辞書を作る。
 
 	./dictmake.sh ../linux-4.20
