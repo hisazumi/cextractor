@@ -1,3 +1,5 @@
+ <!-- -*- coding: utf-8 -*- -->
+
 # cextractor
 
 ## Setup
@@ -13,16 +15,29 @@ install clang binding
 
 and set LD_LIBRARY_PATH
 > export LD_LIBRARY_PATH=/usr/local/opt/llvm/lib
+> パスの設定。ライブラリの場所をlibに指定。
 
 ## How to Use
+
+Login
+
+> ssh dl-box.local
+> dl-box.localにssh接続。
+
+Directrory
+
+> /data2/c2v/cextractor
+> cextractorまで行く。
 
 Make dictionary
 
 > ./dictmake.sh ../linux-4.20
+> 一つ前に戻ってlinux-4.20に./dictmake.shの結果を出力 ここに辞書を作る。
 
 Filtering terms 
 
 > python dictfilter.py ../linux-4.20/total.dict > ../linux-4.20/filter.dict
+> 
 
 Extract pathes
 
