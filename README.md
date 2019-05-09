@@ -26,13 +26,14 @@ clang(コンパイラのフロントエンド)をインストール。読み方�
 
 	export LD_LIBRARY_PATH=/usr/local/opt/llvm/lib
  
-
+<br />
+<br />
 
 ## How to Use
 
 Login
 
-> ssh dl-box.local
+> ssh dl-box.local  
 > dl-box.localにssh接続。
 
 Directrory
