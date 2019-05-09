@@ -8,7 +8,7 @@ cextractor requires the clang python binding.
 ### for Mac
 
 【install llvm】  
-
+  
 brew install llvm  
 > llvm(コンパイラのバックエンド)をインストール。  
 
