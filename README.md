@@ -13,17 +13,19 @@ llvm(コンパイラのバックエンド)をインストール。
 	brew install llvm
 <br />
 <br />
-【install clang binding】
+
+【install clang binding】  
+clang(コンパイラのフロントエンド)をインストール。読み方はクラン。
 
 	pip3 install clang  
-clang(コンパイラのフロントエンド)をインストール。読み方はクラン。
 <br />
 <br />
-【and set LD_LIBRARY_PATH】
-  
-export LD_LIBRARY_PATH=/usr/local/opt/llvm/lib
 
-> パスの設定。ライブラリの場所をlibに指定。
+【and set LD_LIBRARY_PATH】  
+パスの設定。ライブラリの場所をlibに指定。
+
+	export LD_LIBRARY_PATH=/usr/local/opt/llvm/lib
+ 
 
 
 ## How to Use
