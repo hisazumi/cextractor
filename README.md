@@ -9,6 +9,7 @@ cextractor requires the clang python binding.
 
 install llvm
 > brew install llvm
+
 llvm(コンパイラのバックエンド)をインストール。
 
 install clang binding
