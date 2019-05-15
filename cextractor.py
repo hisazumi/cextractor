@@ -43,9 +43,12 @@ class Function:
             print(' ', end='')
             p.print_paths()
 
-    def count_name(self, names):
+    def count_function_name(self, names):
         for n in self.function_name_split():
             names[n] += 1
+
+    def count_name(self, names):
+        self.count_function_name(names)
         self.function_def.count_name(names)
 
     def to_str(self):
@@ -222,6 +225,9 @@ if __name__ == "__main__":
     argparser.add_argument('-d', '--dict',
                            action='store_true',
                            help="show name dictionary")
+    argparser.add_argument('-n', '--name',
+                           action='store_true',
+                           help="show function name dictionary")
     argparser.add_argument('-r', '--predict',
                            action='store_true',
                            help='show output for prediction')
@@ -250,6 +256,12 @@ if __name__ == "__main__":
             f.count_name(names)
 
         print(json.dumps(names))     
+    elif args.name: #function name
+        names = defaultdict(lambda: 0)
+        for f in file2function_array(args.filename):
+            f.count_function_name(names)
+
+        print(json.dumps(names))
     else:
         read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
