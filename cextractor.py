@@ -202,7 +202,8 @@ class Pair:
 def file2function_array(file):
     tu = Index.create().parse(file)
     return [Function(child) for child in tu.cursor.get_children() \
-                if child.kind.name == 'FUNCTION_DECL']
+                if child.kind.name == 'FUNCTION_DECL' and \
+                   str(child.extent.start.file) == file] #for avoiding include
 
 def read_filter_dictionary(file):
     with open(file) as file:
