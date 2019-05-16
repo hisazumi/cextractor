@@ -218,6 +218,9 @@ def show_function_names(file):
             print('|'.join(Function.cfunction_name_split(child.displayname)))
 
 def read_filter_dictionary(file):
+    if file == None:
+        return
+
     with open(file) as file:
         global filter_dictionary
         filter_dictionary = json.load(file)
@@ -280,6 +283,7 @@ if __name__ == "__main__":
 
         print(json.dumps(names))
     elif args.functions:
+        read_filter_dictionary(args.filter)
         show_function_names(args.filename)
     else:
         read_filter_dictionary(args.filter)
