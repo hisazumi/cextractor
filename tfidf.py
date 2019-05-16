@@ -25,5 +25,10 @@ if __name__ == "__main__":
         # bigger is better
         metrics[k] = (tfidf, tf, idf)
 
-    for k, mx in sorted(metrics.items(), key=lambda x: -x[1][0]):
-        print("%s: %f %f %f" % (k, mx[0], mx[1], mx[2]))
+#    for k, mx in sorted(metrics.items(), key=lambda x: -x[1][0]):
+#        print("%s: %f %f %f" % (k, mx[0], mx[1], mx[2]))
+
+    filtered = {k:v[0] for (k,v) in metrics.items() if v[0] < 1.0}
+    print(json.dumps(filtered))
+
+    
