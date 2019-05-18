@@ -18,9 +18,7 @@ if __name__ == "__main__":
     metrics = {}
     for k, num in cdict.items():
         idf = math.log(docnum/float(alldict[k]))
-        #df = 1
         tf = float(num)/term_num
-        #XXX document number should be passed as arg
         tfidf = tf * idf
         # bigger is better
         metrics[k] = (tfidf, tf, idf)
