@@ -20,9 +20,10 @@ if __name__ == "__main__":
         idf = math.log(docnum/float(alldict[k]))
         tf = float(num)/term_num
         tfidf = tf * idf
-        # bigger is better
+        # lower is better
         metrics[k] = (tfidf, tf, idf)
 
+# for debugging metric
 #    for k, mx in sorted(metrics.items(), key=lambda x: -x[1][0]):
 #        print("%s: %f %f %f" % (k, mx[0], mx[1], mx[2]))
 
