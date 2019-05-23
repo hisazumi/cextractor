@@ -1,9 +1,15 @@
 # Fdb version 3
-["dvipdf"] 1558506162 "tech-jsample.dvi" "tech-jsample.pdf" "tech-jsample" 1558506163
-  "tech-jsample.dvi" 1558506162 15052 6e4a3f8acc22d0a0d2ccfbcb1651bfe7 "latex"
+["bibtex tech-jsample"] 1558595165 "tech-jsample.aux" "tech-jsample.bbl" "tech-jsample" 1558595171
+  "bibsample.bib" 1558592791 8537 61e875b24423a607b9aea9f2f4f8feba ""
+  "tech-jsample.aux" 1558595165 725 8ac35a67440e32ae239286116ffc07b7 ""
+  (generated)
+  "tech-jsample.blg"
+  "tech-jsample.bbl"
+["dvipdf"] 1558595171 "tech-jsample.dvi" "tech-jsample.pdf" "tech-jsample" 1558595171
+  "tech-jsample.dvi" 1558595165 14956 4a050d665a4cfb7375dc293e41b10d45 "latex"
   (generated)
   "tech-jsample.pdf"
-["latex"] 1558506161 "tech-jsample.tex" "tech-jsample.dvi" "tech-jsample" 1558506163
+["latex"] 1558595165 "tech-jsample.tex" "tech-jsample.dvi" "tech-jsample" 1558595171
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1480098689 2124 2601a75482e9426d33db523edf23570a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1480098698 468 53f854284f6afa6c36aaa2d1090ecc12 ""
@@ -59,9 +65,10 @@
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "ipsj.cls" 1541385384 142123 a913fa6ef20099c2a9e7fc1a97a1415b ""
   "ipsjtech.sty" 1541385384 6572 e6269869e3c126f2d200f352d590509a ""
-  "tech-jsample.aux" 1558506162 655 735330b1724f5b376fe12646924e3585 ""
-  "tech-jsample.tex" 1558506158 10684 4f524012bd7b0da31948eaebb702efcc ""
+  "tech-jsample.aux" 1558595165 725 8ac35a67440e32ae239286116ffc07b7 ""
+  "tech-jsample.bbl" 1558595165 0 d41d8cd98f00b204e9800998ecf8427e "bibtex tech-jsample"
+  "tech-jsample.tex" 1558595161 11821 25be268cb0a0c741fa0e7c586eb13c6f ""
   (generated)
-  "tech-jsample.dvi"
   "tech-jsample.aux"
   "tech-jsample.log"
+  "tech-jsample.dvi"
