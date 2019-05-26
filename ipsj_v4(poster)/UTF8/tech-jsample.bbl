@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}
+
+\bibitem{alon2019code2vec}
+Uri Alon, Meital Zilberstein, Omer Levy, and Eran Yahav.
+\newblock code2vec: Learning distributed representations of code.
+\newblock {\em Proceedings of the ACM on Programming Languages}, Vol.~3, No.
+  POPL, p.~40, 2019.
+
+\end{thebibliography}

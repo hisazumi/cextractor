@@ -1,47 +1,47 @@
 This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: tech-jsample.aux
-I found no \bibstyle command---while reading file tech-jsample.aux
+The style file: jplain.bst
+Database file #1: bibsample.bib
 You've used 1 entry,
-            0 wiz_defined-function locations,
-            86 strings with 536 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            2620 wiz_defined-function locations,
+            600 strings with 4745 characters,
+and the built_in function-call counts, 470 in all, are:
+= -- 35
+> -- 22
+< -- 3
++ -- 9
+- -- 8
+* -- 33
+:= -- 72
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 1
+duplicate$ -- 24
+empty$ -- 32
+format.name$ -- 12
+if$ -- 103
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 8
+num.names$ -- 2
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 6
 quote$ -- 0
-skip$ -- 0
+skip$ -- 21
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 9
+swap$ -- 8
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 4
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-is.kanji.str$ -- 0
-(There was 1 error message)
+while$ -- 3
+width$ -- 2
+write$ -- 13
+is.kanji.str$ -- 14
