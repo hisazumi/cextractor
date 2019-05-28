@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex tech-jsample"] 1559016357 "tech-jsample.aux" "tech-jsample.bbl" "tech-jsample" 1559021648
+["bibtex tech-jsample"] 1559035970 "tech-jsample.aux" "tech-jsample.bbl" "tech-jsample" 1559035972
   "./ipsjunsrt.bst" 1541385384 23435 157917421dcbfea8e6f65dd6cd2268a1 ""
-  "bibsample.bib" 1558936997 8537 61e875b24423a607b9aea9f2f4f8feba ""
-  "tech-jsample.aux" 1559021647 776 0fa0d82e2c2e81d9d40f938329a2e8fe ""
+  "bibsample.bib" 1559027792 9022 b238ba25bf9217125dfea3e977d68b5f ""
+  "tech-jsample.aux" 1559035970 914 2514be3d4cbb97e43ab675173ff56027 ""
   (generated)
   "tech-jsample.blg"
   "tech-jsample.bbl"
-["dvipdf"] 1559021648 "tech-jsample.dvi" "tech-jsample.pdf" "tech-jsample" 1559021648
-  "tech-jsample.dvi" 1559021647 16240 085a42698e440757354d8e02db4f9454 "latex"
+["dvipdf"] 1559035971 "tech-jsample.dvi" "tech-jsample.pdf" "tech-jsample" 1559035972
+  "tech-jsample.dvi" 1559035970 18564 6b4ea97b2baf81165270f634b68d92b1 "latex"
   (generated)
   "tech-jsample.pdf"
-["latex"] 1559021647 "tech-jsample.tex" "tech-jsample.dvi" "tech-jsample" 1559021648
+["latex"] 1559035970 "tech-jsample.tex" "tech-jsample.dvi" "tech-jsample" 1559035972
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1480098689 2124 2601a75482e9426d33db523edf23570a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1480098698 468 53f854284f6afa6c36aaa2d1090ecc12 ""
@@ -65,13 +65,14 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/eptex/platex.fmt" 1546925694 4345395 0c49284fa5bf4f012fb641c9c53fbd36 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "image/ITF-DFcompare.eps" 1559021328 27293 cdafab5b294e86705e4fbcc1b13d3444 ""
+  "image/TF-IDF.eps" 1559035434 75923 887120e49e24230594f1caf7be57cfc6 ""
+  "image/environment.eps" 1559035538 74701 78657a4876b080615f0c5abcf6b778f0 ""
   "ipsj.cls" 1541385384 142123 a913fa6ef20099c2a9e7fc1a97a1415b ""
   "ipsjtech.sty" 1541385384 6572 e6269869e3c126f2d200f352d590509a ""
-  "tech-jsample.aux" 1559021647 776 0fa0d82e2c2e81d9d40f938329a2e8fe ""
-  "tech-jsample.bbl" 1559016357 401 bcf1fc864dafc7c5ab1439ba40d81237 "bibtex tech-jsample"
-  "tech-jsample.tex" 1559021644 13331 6bde93223f99c75907cf40a91b9cf503 ""
+  "tech-jsample.aux" 1559035970 914 2514be3d4cbb97e43ab675173ff56027 ""
+  "tech-jsample.bbl" 1559035970 754 f3649402a88cc3648d7b3f7d2bbff264 "bibtex tech-jsample"
+  "tech-jsample.tex" 1559035967 14564 fa29b3ae545cc61eca27265e7da44061 ""
   (generated)
   "tech-jsample.log"
-  "tech-jsample.dvi"
   "tech-jsample.aux"
+  "tech-jsample.dvi"
