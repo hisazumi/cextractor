@@ -1,5 +1,9 @@
 \begin{thebibliography}{1}
 
+\bibitem{rong2014word2vec}
+Rong, X.: word2vec parameter learning explained, {\em arXiv preprint
+  arXiv:1411.2738} (2014).
+
 \bibitem{alon2019code2vec}
 Alon, U., Zilberstein, M., Levy, O. and Yahav, E.: code2vec: Learning
   distributed representations of code, {\em Proceedings of the ACM on
