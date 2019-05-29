@@ -147,8 +147,6 @@ OUTPUT tech-jsample.dvi
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
-INPUT image/environment.eps
-INPUT image/environment.eps
 INPUT image/TF-IDF.eps
 INPUT image/TF-IDF.eps
 INPUT tech-jsample.bbl
