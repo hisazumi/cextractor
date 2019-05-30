@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2019.1.8)  29 MAY 2019 13:39
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2019.1.8)  30 MAY 2019 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4267,11 +4267,7 @@ LaTeX Font Info:    Calculating math sizes for size <9.61035> on input line 55.
 
 LaTeX Font Info:    Calculating math sizes for size <11.82813> on input line 55
 .
-LaTeX Font Info:    Calculating math sizes for size <8.27965> on input line 55.
-
 LaTeX Font Info:    Calculating math sizes for size <8.13184> on input line 55.
-
-LaTeX Font Info:    Calculating math sizes for size <5.69225> on input line 55.
 
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <11.82813> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 58.
@@ -4328,12 +4324,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1674 strings out of 493653
- 23110 string characters out of 6148875
+ 1650 strings out of 493653
+ 22669 string characters out of 6148875
  84118 words of memory out of 5000000
- 5268 multiletter control sequences out of 15000+600000
- 36229 words of font info for 157 fonts, out of 8000000 for 9000
+ 5244 multiletter control sequences out of 15000+600000
+ 31331 words of font info for 137 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 34i,10n,21p,844b,427s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,10n,21p,844b,427s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tech-jsample.dvi (2 pages, 17496 bytes).
+Output written on tech-jsample.dvi (2 pages, 17320 bytes).
