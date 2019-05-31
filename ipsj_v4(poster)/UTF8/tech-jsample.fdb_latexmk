@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex tech-jsample"] 1559212148 "tech-jsample.aux" "tech-jsample.bbl" "tech-jsample" 1559293417
+["bibtex tech-jsample"] 1559212148 "tech-jsample.aux" "tech-jsample.bbl" "tech-jsample" 1559294580
   "./ipsjunsrt.bst" 1541385384 23435 157917421dcbfea8e6f65dd6cd2268a1 ""
   "bibsample.bib" 1559027792 9022 b238ba25bf9217125dfea3e977d68b5f ""
-  "tech-jsample.aux" 1559293416 808 591b4007910d8072e687ca74d17b0a89 ""
+  "tech-jsample.aux" 1559294579 808 591b4007910d8072e687ca74d17b0a89 ""
   (generated)
   "tech-jsample.blg"
   "tech-jsample.bbl"
-["dvipdf"] 1559293417 "tech-jsample.dvi" "tech-jsample.pdf" "tech-jsample" 1559293417
-  "tech-jsample.dvi" 1559293416 17076 9f1a6e36c3c8099e9b7920b63974fdc7 "latex"
+["dvipdf"] 1559294579 "tech-jsample.dvi" "tech-jsample.pdf" "tech-jsample" 1559294580
+  "tech-jsample.dvi" 1559294579 17076 f68ab7cc52ad3d522655fdafded9c05c "latex"
   (generated)
   "tech-jsample.pdf"
-["latex"] 1559293416 "tech-jsample.tex" "tech-jsample.dvi" "tech-jsample" 1559293417
+["latex"] 1559294578 "tech-jsample.tex" "tech-jsample.dvi" "tech-jsample" 1559294580
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1480098689 2124 2601a75482e9426d33db523edf23570a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1480098698 468 53f854284f6afa6c36aaa2d1090ecc12 ""
@@ -68,10 +68,10 @@
   "image/TF-IDF.eps" 1559035434 75923 887120e49e24230594f1caf7be57cfc6 ""
   "ipsj.cls" 1541385384 142123 a913fa6ef20099c2a9e7fc1a97a1415b ""
   "ipsjtech.sty" 1541385384 6572 e6269869e3c126f2d200f352d590509a ""
-  "tech-jsample.aux" 1559293416 808 591b4007910d8072e687ca74d17b0a89 ""
+  "tech-jsample.aux" 1559294579 808 591b4007910d8072e687ca74d17b0a89 ""
   "tech-jsample.bbl" 1559212148 754 f3649402a88cc3648d7b3f7d2bbff264 "bibtex tech-jsample"
-  "tech-jsample.tex" 1559293410 14388 249665234f4625278ca0f818f6048ea6 ""
+  "tech-jsample.tex" 1559294575 14388 0119a86a8848a6b07f3338d9262757c3 ""
   (generated)
-  "tech-jsample.dvi"
-  "tech-jsample.log"
   "tech-jsample.aux"
+  "tech-jsample.log"
+  "tech-jsample.dvi"
