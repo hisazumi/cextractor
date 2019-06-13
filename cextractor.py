@@ -23,7 +23,11 @@ class Function:
         return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
 
     def function_name_split(self):
-        name = self.funcdecl[:self.funcdecl.index('(')]
+        return Function.cfunction_name_split(self.funcdecl)
+
+    @classmethod
+    def cfunction_name_split(klass, displayname):
+        name = displayname[:displayname.index('(')]
         splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
         filtered = [x for x in splitted if len(x) > 0]
         if len(filter_dictionary) > 0:
@@ -43,9 +47,12 @@ class Function:
             print(' ', end='')
             p.print_paths()
 
-    def count_name(self, names):
+    def count_function_name(self, names):
         for n in self.function_name_split():
             names[n] += 1
+
+    def count_name(self, names):
+        self.count_function_name(names)
         self.function_def.count_name(names)
 
     def to_str(self):
@@ -198,10 +205,22 @@ class Pair:
 
 def file2function_array(file):
     tu = Index.create().parse(file)
+
     return [Function(child) for child in tu.cursor.get_children() \
-                if child.kind.name == 'FUNCTION_DECL']
+                if child.kind.name == 'FUNCTION_DECL' and \
+                   str(child.extent.start.file) == file] #for avoiding include
+
+def show_function_names(file):
+    tu = Index.create().parse(file)
+    for child in tu.cursor.get_children():
+        if child.kind.name == 'FUNCTION_DECL' and \
+                str(child.extent.start.file) == file:
+            print('|'.join(Function.cfunction_name_split(child.displayname)))
 
 def read_filter_dictionary(file):
+    if file == None:
+        return
+
     with open(file) as file:
         global filter_dictionary
         filter_dictionary = json.load(file)
@@ -222,12 +241,19 @@ if __name__ == "__main__":
     argparser.add_argument('-d', '--dict',
                            action='store_true',
                            help="show name dictionary")
+    argparser.add_argument('-n', '--name',
+                           action='store_true',
+                           help="show function name dictionary")
     argparser.add_argument('-r', '--predict',
                            action='store_true',
                            help='show output for prediction')
+    argparser.add_argument('-m', '--functions',
+                           action='store_true',
+                           help='show function names')
     argparser.add_argument('-f', '--filter', 
                            action='store', type=str,
                            help='dictionary for filtering identifier')
+
     args = argparser.parse_args()
 
     # Body
@@ -250,6 +276,15 @@ if __name__ == "__main__":
             f.count_name(names)
 
         print(json.dumps(names))     
+    elif args.name: #make function name dictionary
+        names = defaultdict(lambda: 0)
+        for f in file2function_array(args.filename):
+            f.count_function_name(names)
+
+        print(json.dumps(names))
+    elif args.functions:
+        read_filter_dictionary(args.filter)
+        show_function_names(args.filename)
     else:
         read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
