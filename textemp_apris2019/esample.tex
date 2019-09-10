@@ -49,14 +49,14 @@ code2vec, TF-IDF, C language, code snippet, function name estimation
 
 %1
 \section{Introduction}
-In natural language processing, methods for obtaining distributed representations that take into account their meanings such as word2vec have been proposed and applied in various ways.
+In natural language processing, methods for obtaining distributed representations that take into account their meanings such as word2vec\cite{rong2014word2vec} have been proposed and applied in various ways.
 Software development is supported in various aspects using similar methods in program code, and there is room for improvement in both methods and applications.
 
-Code2vec has been proposed as a method for obtaining the distributed representation of the program code. In this approach, you can numerically express the code snippets and the relationship between them as real vectors. The main task to use distributed representations obtained by code2vec is such as estimation of the method name from the method body. Code2vec is for object-oriented languages such as Java and C\#.
+Code2vec\cite{alon2019code2vec} has been proposed as a method for obtaining the distributed representation of the program code. In this approach, you can numerically express the code snippets and the relationship between them as real vectors. The main task to use distributed representations obtained by code2vec is such as estimation of the method name from the method body. Code2vec is for object-oriented languages such as Java and C\#.
 
 C language often used in embedded systems, however, is not an object-oriented language so you can not directly apply C language to code2vec. Especially in the task of estimating the function name, the estimation accuracy of the function name decreases because it contains both the module-specific name and general operation name.
 
-In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency) to the function name to remove module-specific names based on the TF-IDF value. The TF-IDF value becomes higher when the word appears frequently in a given document, but the word hardly appears in multiple documents. Since the module-specific name is unique within a document, its TF-IDF value is high. Therefore, we set a threshold for the TF-IDF value and delete the one with high value to leave only the operation name. By learning only operation names as function names, we aim to improve the accuracy of function name estimation.
+In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{ramos2003using} to the function name to remove module-specific names based on the TF-IDF value. The TF-IDF value becomes higher when the word appears frequently in a given document, but the word hardly appears in multiple documents. Since the module-specific name is unique within a document, its TF-IDF value is high. Therefore, we set a threshold for the TF-IDF value and delete the one with high value to leave only the operation name. By learning only operation names as function names, we aim to improve the accuracy of function name estimation.
 
 
 %2
@@ -85,6 +85,8 @@ Since the function name is usually a compound word, to extract only the future g
 
 
 
+\bibliographystyle{ipsjunsrt}
+\bibliography{ebibsample}
 
 % \begin{thebibliography}{99}
 % \bibitem{companion}%1

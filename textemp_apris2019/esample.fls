@@ -1,4 +1,4 @@
-PWD /Users/hieda/Documents/textemp_apris2019
+PWD /Users/hieda/cextractor/textemp_apris2019
 INPUT /usr/local/texlive/2017/texmf.cnf
 INPUT /usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2017/texmf.cnf
@@ -215,4 +215,21 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 OUTPUT esample.dvi
+INPUT esample.bbl
+INPUT esample.bbl
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txmi1.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsy.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txex.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/latex-fonts/lasy8.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txi.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txmia.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsya.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsyb.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsyc.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txexa.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT esample.aux
