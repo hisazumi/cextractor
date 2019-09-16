@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2019.1.8)  15 SEP 2019 15:45
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2019.1.8)  16 SEP 2019 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -327,34 +327,32 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <11.82813> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 53.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <11.82813> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 53.
+Missing character: There is no ^^e2 in font txr!
+Missing character: There is no ^^80 in font txr!
+Missing character: There is no ^^8b in font txr!
+Missing character: There is no ^^e2 in font txr!
+Missing character: There is no ^^80 in font txr!
+Missing character: There is no ^^8b in font txr!
+Missing character: There is no ^^c2 in font txr!
+Missing character: There is no ^^a0 in font txr!
 Missing character: There is no ^^c2 in font txr!
 Missing character: There is no ^^a0 in font txr!
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 8.78625pt on input line 76.
+(Font)              scaled to size 8.78625pt on input line 82.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9.24873> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 76.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 82.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9.24873> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 76.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 82.
 LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <9.24873> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 76.
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 82.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 8.78625pt on input line 76.
+(Font)              scaled to size 8.78625pt on input line 82.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 7.43452pt on input line 76.
+(Font)              scaled to size 7.43452pt on input line 82.
 [1
 
 
 ]
-Missing character: There is no ^^c2 in font txr!
-Missing character: There is no ^^a0 in font txr!
-Missing character: There is no ^^e2 in font txr!
-Missing character: There is no ^^80 in font txr!
-Missing character: There is no ^^8b in font txr!
-Missing character: There is no ^^e2 in font txr!
-Missing character: There is no ^^80 in font txr!
-Missing character: There is no ^^8b in font txr!
-Missing character: There is no ^^c2 in font txr!
-Missing character: There is no ^^a0 in font txr!
 Missing character: There is no ^^c2 in font txr!
 Missing character: There is no ^^a0 in font txr!
  (./esample.bbl
@@ -388,4 +386,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  30i,9n,22p,1152b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on esample.dvi (2 pages, 11952 bytes).
+Output written on esample.dvi (2 pages, 11928 bytes).

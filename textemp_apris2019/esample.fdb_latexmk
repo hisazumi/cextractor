@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex esample"] 1568529879 "esample.aux" "esample.bbl" "esample" 1568529953
+["bibtex esample"] 1568529879 "esample.aux" "esample.bbl" "esample" 1568613941
   "./ipsjunsrt.bst" 1565578664 22183 69550cce1f2741b7019cdcc86b6f357e ""
   "ebibsample.bib" 1568091450 6053 c45b01ffe75734681766ea1173c92070 ""
-  "esample.aux" 1568529953 636 7bd88210fa2092c2e07fdd6b3a6bd735 ""
+  "esample.aux" 1568613939 636 7bd88210fa2092c2e07fdd6b3a6bd735 ""
   (generated)
   "esample.bbl"
   "esample.blg"
-["dvipdf"] 1568529953 "esample.dvi" "esample.pdf" "esample" 1568529953
-  "esample.dvi" 1568529953 11952 bc7ffc35f21e7ff6dd080aa27e398e9f "latex"
+["dvipdf"] 1568613940 "esample.dvi" "esample.pdf" "esample" 1568613941
+  "esample.dvi" 1568613939 11928 5b282d446f87735bd75fc0be83e939ef "latex"
   (generated)
   "esample.pdf"
-["latex"] 1568529952 "esample.tex" "esample.dvi" "esample" 1568529953
+["latex"] 1568613939 "esample.tex" "esample.dvi" "esample" 1568613941
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1480098698 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1480098698 1196 1be730212205a270378fba11a44765dc ""
@@ -72,9 +72,9 @@
   "/usr/local/texlive/2017/texmf-var/web2c/eptex/platex.fmt" 1546925694 4345395 0c49284fa5bf4f012fb641c9c53fbd36 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "apris.cls" 1565686992 125346 4b8cf633fe118e28da357bbf713a4c80 ""
-  "esample.aux" 1568529953 636 7bd88210fa2092c2e07fdd6b3a6bd735 ""
+  "esample.aux" 1568613939 636 7bd88210fa2092c2e07fdd6b3a6bd735 ""
   "esample.bbl" 1568529879 636 dc0fea678971b10967ce84d48c9e6485 "bibtex esample"
-  "esample.tex" 1568529950 12856 c6c7a86794c7ccfbc92b1c640b600199 ""
+  "esample.tex" 1568613933 12925 3651613474805d148c5dce5255624b56 ""
   (generated)
   "esample.aux"
   "esample.log"

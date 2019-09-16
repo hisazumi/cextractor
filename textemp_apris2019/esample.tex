@@ -66,23 +66,28 @@ In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{
 
 %2
 \section{Analytical method}
-In this section describing the analysis procedure of C language program code.
+In this section, we describe the analysis procedure of C language program code.
+Since a C language program is made up of a plurality of files, it performs the processing for each file. First, it extracts a function definition. A function definition consists of a function name, arguments, return value, and function body.
 
-Since the C language program is made up of a plurality of files, it performs the processing for each file. First extracts a function definition. Function definition function name, arguments, return value, and a function body.
+The function name is usually a compound word, so we extract only the general terms. Since camel case and underscore are used to represent word breaks, we extract words by separating them.
+Besides, numerical values ​​are often inappropriate as general words, so we delete them. We do them for all prepared C language programming code files.
 
-Since the function name is usually a compound word, to extract only the future general terms. To represent the delimiter of a word, the first letter of the word to upper case, and camel case to be in lower case otherwise, since the underscore is used, it extracts words in their separated. Further, the number is as a general term fried multi is inappropriate, to remove a number. do this, to subject the file of all of the C language programming code that is prepared.
+ We calculate all occurrences number of documents about a word (DF) and consider this as an entire dictionary. We also make a dictionary about the frequency of appearance of each word (TF) for each file. Based on these dictionaries, we calculate the TF-IDF value.
+We calculate the TF-IDF value of a word X in document A as (frequency of word X in document A) / (total frequency of all words in document A) * log (total number of documents) / (number of documents containing word X).
+After calculating all the words' TF-IDF, it makes a function name with the deletion of words below the threshold.
 
- All occurrences number of documents about the word (DF) is calculated, and the entire dictionary. Also, to create a dictionary of frequency of appearance of each word (TF) for each file. Based on these dictionaries calculating the TF-IDF. TF-IDF word X in document A is word X in (document A frequency) / (the total sum of the frequency of occurrence of words) * log (total number of documents in the document a) / (calculated by the number of documents) that contain the word X. after calculating all the words of TF-IDF appearing in , to create a function name that you remove the following words threshold.
+ Next, we extract features from the function body and analyze code2vec following other language's implementation method.
+We parse the function body, convert it to an abstract syntax tree, and extract all terminal symbols in the tree.
+We consider all combinations of the extracted terminal symbols and extract a sequence of non-terminal symbols and terminal symbols connecting terminal symbols as a path.
 
- Then analyzed following the implementation for other languages ​​.code2vec for extracting a feature value from the function body. Convert the function body parsing to the abstract syntax tree, extracts all terminal symbols in the tree. The extracted extracting a sequence of non-terminal symbols and terminal symbols connecting the terminal symbol to be. set to create all the combinations of terminal symbol as the path. This is a feature quantity.
-
- This, and a function name composed of general preferences and features extracted from the function body, learning using Code2vec.
+ Code2vec learns the function name consisting of only common words and the feature value extracted from the function body.
 
 %3
 \section{Related research}
-Cmu-seiの研究では、我々と似たような手法でC言語へのcode2vecの適用を試みていた。彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
-
-Cmu-seiの研究では、我々と似たような手法でC言語へのcode2vecの適用を試みていた。彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
+% In Cmu-sei's research\cite{}, they tried to apply C language to code2vec using a method similar to ours.
+Cmu-sei\cite{}の研究では、我々と似たような手法でC言語へのcode2vecの適用を試みていた。彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
+彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
+しかし、彼らはTF-IDFを用いていない。これではモジュール名と操作名が分離されていないので、関数名推定の制度が上がらない恐れがある。そこで我々は彼らとTF-IDFを用いた我々での関数名推定の制度を比較し検討した。
 % code2vec has been proposed as a method for obtaining a distributed representation of the program code. In the conventional method, learning an identifier, such as appearing in the program code, it had gained a distributed representation. However identifier in the code it is often function code is different yet substantially similar. For example, in the operation for the sequence, and code for determining whether the specified element is present in the sequence, when there is specified elements in the array is a code that returns a value, the return is substantially the same structure value is different only. Accordingly, to reflect the distributed representation differences these delicate in Code2vec, After the code into an abstract syntax tree, the feature amount extracting a column of non-terminal symbols and terminal symbols connecting the two terminal symbols in the tree as the path to. This by learning based on the feature amount, it becomes possible to discern what structure also changes a slight difference by a function similar.
 
 
@@ -91,8 +96,7 @@ Cmu-seiの研究では、我々と似たような手法でC言語へのcode2vec�
 表~?はcmu-seiと我々の関数名推定の結果の比較である。今回我々はGitHubのC言語のレポジトリのうちトップの50レポジトリを学習データとして比較している。これによると〜ということがわかった。
 %  The code2vec In this research to apply the C language, illustrated the implementation of extracting a feature quantity using LLVM and Clang\cite{lattner2007clang}. In the task of estimating the function name from the function body, an identifier such as C language function name, since it is often composed of compound words and module specific name and general operation name, the time of learning we discussed that there is likely to be an obstacle. Furthermore, in order to solve this problem, we proposed a method of classifying the module-specific names and operation names using the function name of the C language TF-IDF. The results show that it is possible to extract only general operation name from the function name in the C language.
 
- The future challenges. Evaluation by applying the proposed method, such as evaluation by application to other identifier of the variable name, and the like not only the function name, and the like.
-
+Future challenges include the evaluation by applying the proposed method and applying to other identifiers such as variable names and function names.
 % \begin{table}[t]
 %  \centering
 %  \caption{TF-IDF手法を用いた推定結果}
