@@ -200,6 +200,11 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
+INPUT image/ITF-DFcompare.eps
+INPUT image/ITF-DFcompare.eps
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
@@ -215,6 +220,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 OUTPUT esample.dvi
+INPUT image/cmu-kyu.eps
+INPUT image/cmu-kyu.eps
 INPUT esample.bbl
 INPUT esample.bbl
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
@@ -230,6 +237,4 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsya.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsyb.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsyc.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txexa.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT esample.aux

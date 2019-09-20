@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2019.1.8)  16 SEP 2019 15:05
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2019.1.8)  20 SEP 2019 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -283,79 +283,86 @@ LaTeX Font Info:    Font shape `OT1/txss/bx/it' in size <8.5373> not available
 LaTeX Font Info:    Font shape `OT1/txss/b/sl' will be
 (Font)              scaled to size 8.1104pt on input line 41.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12.80594> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 50.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12.80594> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 50.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <19.92035> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 50.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <19.92035> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 50.
-LaTeX Font Info:    Calculating math sizes for size <9.25> on input line 50.
-LaTeX Font Info:    Try loading font information for U+txmia on input line 50.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 49.
+LaTeX Font Info:    Calculating math sizes for size <9.25> on input line 49.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 49.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 50.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 49.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 50.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 49.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 50.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 49.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 
 LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 50.
+(Font)              using `JT1/mc/m/n' instead on input line 49.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 50.
+(Font)              using `JY1/mc/m/n' instead on input line 49.
 
-LaTeX Font Info:    Calculating math sizes for size <12.56738> on input line 50
+LaTeX Font Info:    Calculating math sizes for size <12.56738> on input line 49
 .
-LaTeX Font Info:    Calculating math sizes for size <7.82585> on input line 50.
+LaTeX Font Info:    Calculating math sizes for size <7.82585> on input line 49.
 
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <11.82813> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 53.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <11.82813> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 53.
-Missing character: There is no ^^e2 in font txr!
-Missing character: There is no ^^80 in font txr!
-Missing character: There is no ^^8b in font txr!
-Missing character: There is no ^^e2 in font txr!
-Missing character: There is no ^^80 in font txr!
-Missing character: There is no ^^8b in font txr!
-Missing character: There is no ^^c2 in font txr!
-Missing character: There is no ^^a0 in font txr!
-Missing character: There is no ^^c2 in font txr!
-Missing character: There is no ^^a0 in font txr!
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 52.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <7.82584> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 67.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <7.82584> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 67.
+File: image/ITF-DFcompare.eps Graphic file (type eps)
+<image/ITF-DFcompare.eps>
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 8.78625pt on input line 82.
+(Font)              scaled to size 8.78625pt on input line 77.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9.24873> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 82.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9.24873> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 82.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `OT1/txss/bx/n' in size <9.24873> not available
-(Font)              Font shape `OT1/txss/b/n' tried instead on input line 82.
+(Font)              Font shape `OT1/txss/b/n' tried instead on input line 77.
 LaTeX Font Info:    Font shape `OT1/txss/b/n' will be
-(Font)              scaled to size 8.78625pt on input line 82.
+(Font)              scaled to size 8.78625pt on input line 77.
 LaTeX Font Info:    Font shape `OT1/txss/m/n' will be
-(Font)              scaled to size 7.43452pt on input line 82.
-[1
+(Font)              scaled to size 7.43452pt on input line 77.
+ [1
 
 
 ]
+Missing character: There is no ^^e2 in font txr!
+Missing character: There is no ^^80 in font txr!
+Missing character: There is no ^^8b in font txr!
+Missing character: There is no ^^e2 in font txr!
+Missing character: There is no ^^80 in font txr!
+Missing character: There is no ^^8b in font txr!
 Missing character: There is no ^^c2 in font txr!
 Missing character: There is no ^^a0 in font txr!
- (./esample.bbl
+Missing character: There is no ^^c2 in font txr!
+Missing character: There is no ^^a0 in font txr!
+Missing character: There is no ^^c2 in font txr!
+Missing character: There is no ^^a0 in font txr!
+File: image/cmu-kyu.eps Graphic file (type eps)
+ <image/cmu-kyu.eps> (./esample.bbl
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9.25> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9.25> not available
@@ -370,20 +377,18 @@ LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
 LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
 (Font)              using `JY1/gt/m/n' instead on input line 4.
 
-) [2
-
-] (./esample.aux)
+) [2] (./esample.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 2283 strings out of 493653
- 29818 string characters out of 6148875
+ 2296 strings out of 493653
+ 30000 string characters out of 6148875
  86954 words of memory out of 5000000
- 5851 multiletter control sequences out of 15000+600000
- 60873 words of font info for 195 fonts, out of 8000000 for 9000
+ 5860 multiletter control sequences out of 15000+600000
+ 61462 words of font info for 196 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 30i,9n,22p,1152b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,9n,22p,1117b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on esample.dvi (2 pages, 11928 bytes).
+Output written on esample.dvi (2 pages, 13132 bytes).

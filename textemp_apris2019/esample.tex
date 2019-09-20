@@ -40,7 +40,6 @@
 
 \begin{abstract}
 Code2vec is a method for obtaining a distributed representation of program code. It obtains the embedding vector of program code through machine learning and predicts the label such as ‘method body’ representing the functionality of the code snippets. Thus, it is possible to obtain a distributed representation of the code snippet whose meaning is taken into account. In embedded system development, the non-object-oriented programming language C is often used, however code2vec is intended for object-oriented programming languages such as Java and C\#. Therefore, to apply code2vec to the C language, there are some problems that must be solved: labelling is difficult since the function name differs from that of the object-oriented language, and we need to develop a method of feature amount extraction from C language. In the following paper, we propose a method for extracting feature values from the C language programs and making use of the TF-IDF method for decomposing a given function name into both module-specific names and general operation names, as found in object-oriented languages.
-% Code2vec is a method for obtaining a distributed representation of the program code. It obtains the embedding vector of program code through machine learning and predicts the label such as ``method body'' representing the functionality of the code snippets. Thus, it is possible to obtain a distributed representation of the code snippet whose meaning is taken into account. In the embedded system development, you often use the C language which is non-object-oriented, but code2vec is intended for object-oriented programming languages ​​such as Java and C\#. Therefore, to apply the code2vec to the C language,  there are some challenges that labeling is difficult since the naming of the function name is different from that of the object-oriented language and we need to consider a method of feature amount extraction from C language. In this study to apply code2vec to the C language programs, we propose a method for extracting feature value from the C language programs and TF-IDF method for decomposing a function name in a module-specific name and general operation name like the object-oriented language.
 \end{abstract}
 
 \begin{keyword}
@@ -61,8 +60,15 @@ Code2vec\cite{alon2019code2vec} has been proposed as a method for obtaining the 
 C language is often used in embedded systems, however, as it is not an object-oriented language, it is not possible to directly apply C language to code2vec. In particular, when estimating the function name, estimation accuracy decreases because the function name itself contains both the module-specific name and general operation name.
 % C language often used in embedded systems, however, is not an object-oriented language so you can not directly apply C language to code2vec. Especially in the task of estimating the function name, the estimation accuracy of the function name decreases because it contains both the module-specific name and general operation name.
 
-In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{ramos2003using} to the function name to remove module-specific names based on the TF-IDF value. The TF-IDF value increases when a certain word appears frequently in a specific document, whilst only appearing infrequently in other documents. Since the module-specific name is unique within a document, its TF-IDF value is high. Therefore, we set a threshold for the TF-IDF value and delete the one with the highest value to leave only the operation name. By learning only operation names as function names, we aim to improve the accuracy of function name estimation. 
+In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{ramos2003using} to the function name to remove module-specific names based on the TF-IDF value as shown in Table~\ref{table1}. The TF-IDF value increases when a certain word appears frequently in a specific document, whilst only appearing infrequently in other documents. Since the module-specific name is unique within a document, its TF-IDF value is high. Therefore, we set a threshold for the TF-IDF value and delete the one with the highest value to leave only the operation name. By learning only operation names as function names, we aim to improve the accuracy of function name estimation. 
 % In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{ramos2003using} to the function name to remove module-specific names based on the TF-IDF value. The TF-IDF value becomes higher when the word appears frequently in a given document, but the word hardly appears in multiple documents. Since the module-specific name is unique within a document, its TF-IDF value is high. Therefore, we set a threshold for the TF-IDF value and delete the one with high value to leave only the operation name. By learning only operation names as function names, we aim to improve the accuracy of function name estimation.
+\begin{table}[t]
+ \centering
+ \caption{Result of using TF-IDF method}
+ \includegraphics[width=1.0\hsize]{image/ITF-DFcompare.eps} 
+ \label{table1} 
+\end{table}
+
 
 %2
 \section{Analytical method}
@@ -84,25 +90,43 @@ We consider all combinations of the extracted terminal symbols and extract a seq
 
 %3
 \section{Related research}
-% In Cmu-sei's research\cite{}, they tried to apply C language to code2vec using a method similar to ours.
-Cmu-sei\cite{}の研究では、我々と似たような手法でC言語へのcode2vecの適用を試みていた。彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
-彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
-しかし、彼らはTF-IDFを用いていない。これではモジュール名と操作名が分離されていないので、関数名推定の制度が上がらない恐れがある。そこで我々は彼らとTF-IDFを用いた我々での関数名推定の制度を比較し検討した。
+In Cmu-sei's research\cite{code2vec-c}, they tried to apply C language to code2vec using a method similar to ours.
+% Cmu-sei\cite{}の研究では、我々と似たような手法でC言語へのcode2vecの適用を試みていた。
+They paid attention to differences between parsers of C and Java, and the fact that function declarations in C are not in Java.
+They used Clang and LLVM\cite{lattner2007clang} as we did, and tried to apply code2vec to C language by abstracting the functions.
+% 彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
+In this case, the accuracy of function name estimation may not improve because the module name and operation name are not separated.
+% しかし、彼らはTF-IDFを用いていない。これではモジュール名と操作名が分離されていないので、関数名推定の精度が上がらない恐れがある。そこで我々は彼らとTF-IDFを用いた我々での関数名推定の制度を比較し検討した。
+
 % code2vec has been proposed as a method for obtaining a distributed representation of the program code. In the conventional method, learning an identifier, such as appearing in the program code, it had gained a distributed representation. However identifier in the code it is often function code is different yet substantially similar. For example, in the operation for the sequence, and code for determining whether the specified element is present in the sequence, when there is specified elements in the array is a code that returns a value, the return is substantially the same structure value is different only. Accordingly, to reflect the distributed representation differences these delicate in Code2vec, After the code into an abstract syntax tree, the feature amount extracting a column of non-terminal symbols and terminal symbols connecting the two terminal symbols in the tree as the path to. This by learning based on the feature amount, it becomes possible to discern what structure also changes a slight difference by a function similar.
 
 
 %4
-\section{Conclusion}
-表~?はcmu-seiと我々の関数名推定の結果の比較である。今回我々はGitHubのC言語のレポジトリのうちトップの50レポジトリを学習データとして比較している。これによると〜ということがわかった。
-%  The code2vec In this research to apply the C language, illustrated the implementation of extracting a feature quantity using LLVM and Clang\cite{lattner2007clang}. In the task of estimating the function name from the function body, an identifier such as C language function name, since it is often composed of compound words and module specific name and general operation name, the time of learning we discussed that there is likely to be an obstacle. Furthermore, in order to solve this problem, we proposed a method of classifying the module-specific names and operation names using the function name of the C language TF-IDF. The results show that it is possible to extract only general operation name from the function name in the C language.
+\section{Result}
+Table~\ref{table2} shows a comparison of the results of cmu-sei and our function name estimation.  
+We compare the top 50 repositories about C language on GitHub as learning data. According to this, it found that cmu-sei had better accuracy. 
+The reason for this is that cmu-sei considers the difference between C and Java in 6 major elements, and implements it considering the differences.
 
-Future challenges include the evaluation by applying the proposed method and applying to other identifiers such as variable names and function names.
-% \begin{table}[t]
-%  \centering
-%  \caption{TF-IDF手法を用いた推定結果}
-%  \includegraphics[width=1.0\hsize]{image/TF-IDF.eps} 
-%  \label{table2} 
-% \end{table}
+So we think that applying TF-IDF to the research of cmu-sei will give better results.
+
+% 表~\ref{table2}はcmu-seiと我々の関数名推定の結果の比較である。今回我々はGitHubのC言語のレポジトリのうちトップの50レポジトリを学習データとして比較している。これによると〜ということがわかった。
+
+%5
+\section{Conclusion}
+%  The code2vec In this research to apply the C language, illustrated the implementation of extracting a feature quantity using LLVM and Clang\cite{lattner2007clang}. In the task of estimating the function name from the function body, an identifier such as C language function name, since it is often composed of compound words and module specific name and general operation name, the time of learning we discussed that there is likely to be an obstacle. Furthermore, in order to solve this problem, we proposed a method of classifying the module-specific names and operation names using the function name of the C language TF-IDF. The results show that it is possible to extract only general operation name from the function name in the C language.
+In this paper, we showed how to extract features using LLVM and Clang to apply code2vec to C language.
+In tasks that estimate function names from function bodies, identifiers such as C language function names are often composed of compound words consisting of module-specific names and general operation names so we argued that this could be an obstacle.
+To solve this problem, we proposed a method for classifying function names in C language into module-specific names and operation names using TF-IDF.
+As a result, we found that we can extract only general operation names from function names even in C language.
+
+Future challenges include applying TF-IDF to the research of cmu-sei, the evaluation by applying the proposed method and applying to other identifiers such as variable names and function names.
+
+\begin{table}[t]
+ \centering
+ \caption{Comparison between cmu-sei and Kyushu University}
+ \includegraphics[width=1.0\hsize]{image/cmu-kyu.eps} 
+ \label{table2} 
+\end{table}
 
 
 \bibliographystyle{ipsjunsrt}

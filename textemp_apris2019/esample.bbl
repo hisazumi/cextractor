@@ -14,4 +14,12 @@ Ramos, J. et al.: Using tf-idf to determine word relevance in document queries,
   {\em Proceedings of the first instructional conference on machine learning},
   Vol.~242, Piscataway, NJ, pp.\ 133--142 (2003).
 
+\bibitem{code2vec-c}
+cmu sei: code2vec-c, Software Engineering Institute (online),
+  \urle{https://github.com/cmu-sei/code2vec-c} \refdatee{2019}.
+
+\bibitem{lattner2007clang}
+Lattner, C. et al.: clang: a C language family frontend for LLVM, {\em Website}
+  (2007).
+
 \end{thebibliography}

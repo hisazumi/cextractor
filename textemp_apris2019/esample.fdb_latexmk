@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex esample"] 1568529879 "esample.aux" "esample.bbl" "esample" 1568613941
+["bibtex esample"] 1568954682 "esample.aux" "esample.bbl" "esample" 1568954684
   "./ipsjunsrt.bst" 1565578664 22183 69550cce1f2741b7019cdcc86b6f357e ""
-  "ebibsample.bib" 1568091450 6053 c45b01ffe75734681766ea1173c92070 ""
-  "esample.aux" 1568613939 636 7bd88210fa2092c2e07fdd6b3a6bd735 ""
+  "ebibsample.bib" 1568945471 6375 3da8b2b43230bf078dec5b2e9be5424e ""
+  "esample.aux" 1568954682 872 a48ab6f3ad067f202266d481984da2ae ""
   (generated)
-  "esample.bbl"
   "esample.blg"
-["dvipdf"] 1568613940 "esample.dvi" "esample.pdf" "esample" 1568613941
-  "esample.dvi" 1568613939 11928 5b282d446f87735bd75fc0be83e939ef "latex"
+  "esample.bbl"
+["dvipdf"] 1568954683 "esample.dvi" "esample.pdf" "esample" 1568954684
+  "esample.dvi" 1568954682 13132 921d4d4086269bf6614f18f84ed789b1 "latex"
   (generated)
   "esample.pdf"
-["latex"] 1568613939 "esample.tex" "esample.dvi" "esample" 1568613941
+["latex"] 1568954682 "esample.tex" "esample.dvi" "esample" 1568954684
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1480098698 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1480098698 1196 1be730212205a270378fba11a44765dc ""
@@ -72,10 +72,12 @@
   "/usr/local/texlive/2017/texmf-var/web2c/eptex/platex.fmt" 1546925694 4345395 0c49284fa5bf4f012fb641c9c53fbd36 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "apris.cls" 1565686992 125346 4b8cf633fe118e28da357bbf713a4c80 ""
-  "esample.aux" 1568613939 636 7bd88210fa2092c2e07fdd6b3a6bd735 ""
-  "esample.bbl" 1568529879 636 dc0fea678971b10967ce84d48c9e6485 "bibtex esample"
-  "esample.tex" 1568613933 12925 3651613474805d148c5dce5255624b56 ""
+  "esample.aux" 1568954682 872 a48ab6f3ad067f202266d481984da2ae ""
+  "esample.bbl" 1568954682 902 26097e2d47a4cbd957375c171b14dc41 "bibtex esample"
+  "esample.tex" 1568954678 13331 abc69d3cbe7fce99960fe54494d9a5f5 ""
+  "image/ITF-DFcompare.eps" 1560765927 27293 cdafab5b294e86705e4fbcc1b13d3444 ""
+  "image/cmu-kyu.eps" 1568947030 71671 365041acd0425373a8a006de8bfd2326 ""
   (generated)
-  "esample.aux"
-  "esample.log"
   "esample.dvi"
+  "esample.log"
+  "esample.aux"
