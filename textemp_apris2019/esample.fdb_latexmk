@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex esample"] 1569041062 "esample.aux" "esample.bbl" "esample" 1569048908
+["bibtex esample"] 1569041062 "esample.aux" "esample.bbl" "esample" 1569055901
   "./ipsjunsrt.bst" 1565578664 22183 69550cce1f2741b7019cdcc86b6f357e ""
   "ebibsample.bib" 1568945471 6375 3da8b2b43230bf078dec5b2e9be5424e ""
-  "esample.aux" 1569048907 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
+  "esample.aux" 1569055900 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
   (generated)
-  "esample.bbl"
   "esample.blg"
-["dvipdf"] 1569048907 "esample.dvi" "esample.pdf" "esample" 1569048908
-  "esample.dvi" 1569048907 14136 acb2bdef313db828e191243efa1c406c "latex"
+  "esample.bbl"
+["dvipdf"] 1569055901 "esample.dvi" "esample.pdf" "esample" 1569055901
+  "esample.dvi" 1569055900 13944 e18be77872da03f9eb05f2cc1814cd92 "latex"
   (generated)
   "esample.pdf"
-["latex"] 1569048907 "esample.tex" "esample.dvi" "esample" 1569048908
+["latex"] 1569055900 "esample.tex" "esample.dvi" "esample" 1569055901
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1480098698 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1480098698 1196 1be730212205a270378fba11a44765dc ""
@@ -72,12 +72,12 @@
   "/usr/local/texlive/2017/texmf-var/web2c/eptex/platex.fmt" 1546925694 4345395 0c49284fa5bf4f012fb641c9c53fbd36 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "apris.cls" 1565686992 125346 4b8cf633fe118e28da357bbf713a4c80 ""
-  "esample.aux" 1569048907 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
+  "esample.aux" 1569055900 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
   "esample.bbl" 1569041062 902 26097e2d47a4cbd957375c171b14dc41 "bibtex esample"
-  "esample.tex" 1569048904 13583 1f518c65625ffd262884e17bdcd05af8 ""
+  "esample.tex" 1569055898 13556 c434dd6b5c1f1ce065aa80ee1fde9cc0 ""
   "image/ITF-DFcompare.eps" 1560765927 27293 cdafab5b294e86705e4fbcc1b13d3444 ""
-  "image/cmu-pro.eps" 1569048884 71777 b55bab6336fa3c42ceea4ed90a59211a ""
+  "image/cmu-pro.eps" 1569055810 74078 5eb5d0443d685d2c7746ad625ac6aeb8 ""
   (generated)
-  "esample.dvi"
   "esample.aux"
   "esample.log"
+  "esample.dvi"
