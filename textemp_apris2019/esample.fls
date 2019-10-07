@@ -31,6 +31,16 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/latexsym.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/latexsym.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/txfonts/txfonts.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/txfonts/txfonts.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/txfonts/ot1txtt.fd

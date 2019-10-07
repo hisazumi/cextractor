@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex esample"] 1569041062 "esample.aux" "esample.bbl" "esample" 1569055901
+["bibtex esample"] 1570446175 "esample.aux" "esample.bbl" "esample" 1570446176
   "./ipsjunsrt.bst" 1565578664 22183 69550cce1f2741b7019cdcc86b6f357e ""
   "ebibsample.bib" 1568945471 6375 3da8b2b43230bf078dec5b2e9be5424e ""
-  "esample.aux" 1569055900 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
+  "esample.aux" 1570446175 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
   (generated)
-  "esample.blg"
   "esample.bbl"
-["dvipdf"] 1569055901 "esample.dvi" "esample.pdf" "esample" 1569055901
-  "esample.dvi" 1569055900 13944 e18be77872da03f9eb05f2cc1814cd92 "latex"
+  "esample.blg"
+["dvipdf"] 1570446175 "esample.dvi" "esample.pdf" "esample" 1570446176
+  "esample.dvi" 1570446175 14808 a17f1856d91992244db1cd14ffe4ce84 "latex"
   (generated)
   "esample.pdf"
-["latex"] 1569055900 "esample.tex" "esample.dvi" "esample" 1569055901
+["latex"] 1570446175 "esample.tex" "esample.dvi" "esample" 1570446176
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1480098698 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1480098698 1196 1be730212205a270378fba11a44765dc ""
@@ -38,6 +38,11 @@
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsya.tfm" 1480098718 972 2c9ffac4bbd20f91c01aaef9bf3f8710 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsyb.tfm" 1480098718 988 098ca7e8cc5647b9ac21b82dbdce1f01 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txsyc.tfm" 1480098718 1084 75e807e9e71f7a312e4e1187dce5e93b ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1480098820 2210 5c54ab129b848a5071554186d0168766 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty" 1480098820 4160 c115536cf8d4ff25aa8c1c9bc4ecb79a ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty" 1485129665 84329 81aa65c5042562f79cb421feff9b8bdc ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty" 1480098820 4115 318a66090112f3aa3f415aeb6fe8540f ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty" 1480098820 2431 fe3078ec12fc30287f568596f8e0b948 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/latexsym.sty" 1480098821 2854 d9a09e80ec53a1710adc74c0e8300370 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1480098830 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1480098830 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -72,12 +77,12 @@
   "/usr/local/texlive/2017/texmf-var/web2c/eptex/platex.fmt" 1546925694 4345395 0c49284fa5bf4f012fb641c9c53fbd36 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "apris.cls" 1565686992 125346 4b8cf633fe118e28da357bbf713a4c80 ""
-  "esample.aux" 1569055900 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
-  "esample.bbl" 1569041062 902 26097e2d47a4cbd957375c171b14dc41 "bibtex esample"
-  "esample.tex" 1569055898 13556 c434dd6b5c1f1ce065aa80ee1fde9cc0 ""
+  "esample.aux" 1570446175 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
+  "esample.bbl" 1570446175 902 26097e2d47a4cbd957375c171b14dc41 "bibtex esample"
+  "esample.tex" 1570446173 13905 efed5fb82f4466731618f6d82c71c23f ""
   "image/ITF-DFcompare.eps" 1560765927 27293 cdafab5b294e86705e4fbcc1b13d3444 ""
   "image/cmu-pro.eps" 1569055810 74078 5eb5d0443d685d2c7746ad625ac6aeb8 ""
   (generated)
   "esample.aux"
-  "esample.log"
   "esample.dvi"
+  "esample.log"

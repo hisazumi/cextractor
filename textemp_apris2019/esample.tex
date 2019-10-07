@@ -19,6 +19,7 @@
 %\rerereceived{2011}{10}{31} % optional
 \accepted{2011}{11}{5}
 
+\usepackage{amsmath}
 \usepackage[varg]{txfonts}%%!!
 \makeatletter%
 \input{ot1txtt.fd}
@@ -68,9 +69,9 @@ In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{
 
 %2
 \section{Related research}
-The CMU-SEI group\cite{code2vec-c} implemented a C parser for code2vec.
+The CMU-SEI group\cite{code2vec-c} has implemented a C parser for code2vec.
 % Cmu-sei\cite{}の研究では、我々と似たような手法でC言語へのcode2vecの適用を試みていた。
-They paid attention to syntactic differences between parsers of C and Java, such as function declarations in C are not in Java.
+They paid attention to syntactic differences between parsers of C and Java, such as function declarations which exist in C but not in Java.
 They used Clang and LLVM\cite{lattner2007clang}, and tried to apply code2vec to C language by abstracting the functions.
 % 彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
 In this case, the accuracy of function name estimation may not improve because the module name and operation name are not separated.
@@ -80,25 +81,34 @@ In this case, the accuracy of function name estimation may not improve because t
 %3
 \section{Analytical method}
 In this section, we describe the analysis procedure of C language program code.
-Since a C language program is made up of a plurality of files, it performs the processing for each file. First, it extracts a function definition. A function definition consists of a function name, arguments, return value, and function body.
+Since a C language program is made up of multiple different files, the program performs the processing for each file individually. First, it extracts a function definition, which consists of a function name, arguments, return values, and a function body.
 
 The function name is usually a compound word, so we extract only the general terms. Since camel case and underscore are used to represent word breaks, we extract words by separating them.
-Besides, numerical values ​​are often inappropriate as general words, so we delete them. We do them for all prepared C language programming code files.
+Furthermore, numerical values ​​are often inappropriate as general words, so we delete them. We do this for all prepared C language programming code files.
 
- We calculate all occurrences number of documents about a word (DF) and consider this as an entire dictionary. We also make a dictionary about the frequency of appearance of each word (TF) for each file. Based on these dictionaries, we calculate the TF-IDF value of a word X in document A as (frequency of word X in document A) / (total frequency of all words in document A) * log (total number of documents) / (number of documents containing word X).
-After calculating all the words' TF-IDF, it makes a function name with the deletion of words below the threshold.
+ We calculate the number of occurences of documents containing a specific word (DF) and consider this as an entire dictionary. We also make a dictionary of the frequency of appearance of each word (TF) for each file. Based on these dictionaries, we calculate the TF-IDF value.\\
+
+$tfidf_{i,j} = tf_{i,j} \cdot idf_i $\\  
+$tf_{i,j} = \cfrac{n_{i,j}}{\sum_{k}^{} n_{k,j}} $\\
+$idf_i = \log \cfrac{|D|}{{|d:d \ni t_i|}}$ \\
+with\\
+・$n_{i,j}$: number of occurrences of the word $t_{i}$ in the document $d_{j}$. \\
+・$\sum_{k}^{} n{k,j}$: sum of occurrences of all words in document $d_{j}$.\\
+・$|D|$: total number of documents in the corpus.\\
+・$|d:d \ni t_i|$: number of documents where the term $t_{i}$ appears.\\
+
+After calculating all the words' TF-IDF, we obtain a function name with the deletion of words below the threshold.
 
  Next, we extract features from the function body and analyze code2vec following other language's implementation method.
 We parse the function body, convert it to an abstract syntax tree, and extract all terminal symbols in the tree.
 We consider all combinations of the extracted terminal symbols and extract a sequence of non-terminal symbols and terminal symbols connecting terminal symbols as a path.
-
- Code2vec learns the function name consisting of only common words and the feature value extracted from the function body.
+Code2vec learns the function name consisting of only common words and the feature value extracted from the function body.
 
 
 %4
 \section{Result}
-Table~\ref{table2} shows a comparison of the results of CMU-SEI and our function name estimation.  
-We compare the top 50 repositories about C language on GitHub as learning data. According to this, it found that CMU-SEI had better accuracy. 
+Table~\ref{table2} shows a comparison between the results of CMU-SEI and our function name estimation.  
+We compare the top 50 C language repositories on GitHub as learning data. According to our result, it is found that CMU-SEI had better accuracy. 
 The reason for this is that CMU-SEI considers the difference between C and Java in 6 major elements, and implements it considering the differences.\\
 % 表~\ref{table2}はCMU-SEIと我々の関数名推定の結果の比較である。今回我々はGitHubのC言語のレポジトリのうちトップの50レポジトリを学習データとして比較している。これによるとCMU-SEIの方が精度が良いことがわかった。この理由として、CMU-SEIはCとJavaの違いを6つの要素に分けて考え、その差分に従い実装したためだと考えられる。
 1. The C parser uses a simpler maximum leaf node metric beyond which it will skip a function.\\
@@ -114,8 +124,8 @@ The reason for this is that CMU-SEI considers the difference between C and Java 
 % 5. CパーサはJavaと異なり、シンボルのみを除外して残りをリーフノードに残す。
 % 6. Cパーサはパスコンテキストのすべてのすべてのバッグを単一の一意のリストに収集し、リストをシャッフルし、そこからデータセットをサンプリングする。
 
-I think that CMU-SEI had better accuracy because of the implementation considering these factors.
-So we will try applying TF-IDF to the research of CMU-SEI to given better results.
+We believe that CMU-SEI presents better accuracy due to its' implementation which considers the above factors.
+As such, we will apply TF-IDF to the research of CMU-SEI in an attempt to improve our results.
 % これらを考慮した実装を行なったためCMU-SEIの実装の精度がよかったのではないかと考える。
 % したがって、我々はCMU-SEIの研究にTF-IDFを適用させればより良い結果になるのではないかと考える。
 
@@ -129,7 +139,7 @@ To solve this problem, we proposed a method for classifying function names in C 
 As a result, we found that we can extract only general operation names from function names even in C language.
 % 本研究ではcode2vecをC言語に適用すべく，LLVMとClangを用いて特徴量を抽出する実装について示した．また，関数本体から関数名を推定するタスクにおいては，C言語の関数名などの識別子は，モジュール固有名と一般的な操作名との複合語で構成されることが多いため，学習の際に障害になる可能性があることを議論した．さらに，この問題を解決すべく，C言語の関数名をTF-IDFを用いてモジュール固有名と操作名に分類する手法を提案した．その結果，C言語においても関数名から一般的な操作名のみを抽出することができることを示した．
 
-Future challenges include applying TF-IDF to the research of CMU-SEI, the evaluation by applying the proposed method and applying to other identifiers such as variable names and function names. We hope we can finally infer the function from the function name.
+Future work includes applying TF-IDF to the research of CMU-SEI, and evaluating the application of our proposed method to other identifiers such as variable names and function names with the goal being the estimation of the function from the function name.
  % 今後の課題としては．CMU-SEIの研究へのTF-IDF手法の適用、提案手法を適用することによる評価，関数名のみではなく変数名等の他の識別子への適用による評価などが挙げられる．
  % また最終的には関数名から関数を推定する手法の検討が望まれる。
 
