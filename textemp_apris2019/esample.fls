@@ -230,8 +230,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 OUTPUT esample.dvi
-INPUT image/cmu-pro.eps
-INPUT image/cmu-pro.eps
+INPUT image/cmu-kyu.eps
+INPUT image/cmu-kyu.eps
 INPUT esample.bbl
 INPUT esample.bbl
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm

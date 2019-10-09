@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex esample"] 1570446175 "esample.aux" "esample.bbl" "esample" 1570446176
+["bibtex esample"] 1570597707 "esample.aux" "esample.bbl" "esample" 1570610871
   "./ipsjunsrt.bst" 1565578664 22183 69550cce1f2741b7019cdcc86b6f357e ""
   "ebibsample.bib" 1568945471 6375 3da8b2b43230bf078dec5b2e9be5424e ""
-  "esample.aux" 1570446175 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
+  "esample.aux" 1570610870 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
   (generated)
-  "esample.bbl"
   "esample.blg"
-["dvipdf"] 1570446175 "esample.dvi" "esample.pdf" "esample" 1570446176
-  "esample.dvi" 1570446175 14808 a17f1856d91992244db1cd14ffe4ce84 "latex"
+  "esample.bbl"
+["dvipdf"] 1570610871 "esample.dvi" "esample.pdf" "esample" 1570610871
+  "esample.dvi" 1570610870 14540 95cedb4b6dfe4ddbe166d90f71f93f1d "latex"
   (generated)
   "esample.pdf"
-["latex"] 1570446175 "esample.tex" "esample.dvi" "esample" 1570446176
+["latex"] 1570610870 "esample.tex" "esample.dvi" "esample" 1570610871
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1480098698 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1480098698 1196 1be730212205a270378fba11a44765dc ""
@@ -77,12 +77,12 @@
   "/usr/local/texlive/2017/texmf-var/web2c/eptex/platex.fmt" 1546925694 4345395 0c49284fa5bf4f012fb641c9c53fbd36 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "apris.cls" 1565686992 125346 4b8cf633fe118e28da357bbf713a4c80 ""
-  "esample.aux" 1570446175 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
-  "esample.bbl" 1570446175 902 26097e2d47a4cbd957375c171b14dc41 "bibtex esample"
-  "esample.tex" 1570446173 13905 efed5fb82f4466731618f6d82c71c23f ""
+  "esample.aux" 1570610870 872 e2e38e848bc56882e6dcbbbb6de0e483 ""
+  "esample.bbl" 1570597707 902 26097e2d47a4cbd957375c171b14dc41 "bibtex esample"
+  "esample.tex" 1570610868 14433 06cb61ba37c0b0850e2a769c83c9d6cb ""
   "image/ITF-DFcompare.eps" 1560765927 27293 cdafab5b294e86705e4fbcc1b13d3444 ""
-  "image/cmu-pro.eps" 1569055810 74078 5eb5d0443d685d2c7746ad625ac6aeb8 ""
+  "image/cmu-kyu.eps" 1570598501 59184 7a94d516a49689bce2be14a388264512 ""
   (generated)
-  "esample.aux"
-  "esample.dvi"
   "esample.log"
+  "esample.dvi"
+  "esample.aux"
