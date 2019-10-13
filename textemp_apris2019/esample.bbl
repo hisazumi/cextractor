@@ -22,4 +22,8 @@ cmu sei: code2vec-c, Software Engineering Institute (online),
 Lattner, C. et al.: clang: a C language family frontend for LLVM, {\em Website}
   (2007).
 
+\bibitem{joshi2016accuracy}
+Joshi, R.: Accuracy Precision Recall F1 Score: Interpretation of Performance
+  Measures, {\em Retrieved April},  Vol.~1, p.\ 2018 (2016).
+
 \end{thebibliography}

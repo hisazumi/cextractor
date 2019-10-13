@@ -213,8 +213,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
-INPUT image/ITF-DFcompare.eps
-INPUT image/ITF-DFcompare.eps
+INPUT image/TF-IDF.eps
+INPUT image/TF-IDF.eps
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/txfonts/txr.tfm

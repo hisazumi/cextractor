@@ -40,7 +40,7 @@
 
 
 \begin{abstract}
-Code2vec is a method for obtaining a distributed representation of program code. It obtains the embedding vector of program code through machine learning and predicts the label such as ``method body'' representing the functionality of the code snippets. Thus, it is possible to obtain a distributed representation of the code snippet whose meaning is taken into account. In embedded system development, the non-object-oriented programming language C is often used, however code2vec is intended for object-oriented programming languages such as Java and C\#. Therefore, to apply code2vec to the C language, there are some problems that must be solved: labelling is difficult since the function name differs from that of the object-oriented language, and we need to develop a method of feature amount extraction from C language. In the following paper, we propose a method for extracting feature values from the C language programs and making use of the TF-IDF method for decomposing a given function name into both module-specific names and general operation names, as found in object-oriented languages.
+Code2vec is a method for obtaining a distributed representation of program code. It obtains the embed vectors of reals of program code through machine learning and predicts the label such as ``method body'' representing the functionality of the code snippets. Thus, it is possible to obtain a distributed representation of the code snippet whose meaning is taken into account. In embedded system development, the non-object-oriented programming language C is often used, however code2vec is intended for object-oriented programming languages such as Java and C\#. Therefore, to apply code2vec to the C language, there are some problems that must be solved: labelling is difficult since the function name differs from that of the object-oriented language, and we need to develop a method of feature amount extraction from C language. In the following paper, we propose a method for extracting feature values from the C language programs and making use of the TF-IDF method for decomposing a given function name into both module-specific names and general operation names, as found in object-oriented languages.
 \end{abstract}
 
 \begin{keyword}
@@ -53,7 +53,7 @@ code2vec, TF-IDF, C language, code snippet, function name estimation
 \section{Introduction}
 In natural language processing, methods for obtaining distributed representations that take into account their meanings such as word2vec\cite{rong2014word2vec} have been proposed and applied in various ways. Current software development is supported in various ways using similar methods in program code. However, there is room for improvement in both methods and applications. 
 
-Code2vec\cite{alon2019code2vec} has been proposed as a method for obtaining the distributed representation of a given program code snippet. In this approach, it is possible to numerically express the code snippets and the relationship between them as real vectors. The main application of the distributed representations obtained by code2vec is to estimate the method name from the method body. Code2vec is designed for object-oriented languages such as Java and C\#. 
+Code2vec\cite{alon2019code2vec} has been proposed as a method for obtaining the distributed representation of a given program code snippet. In this approach, it is possible to numerically express the code snippets and the relationship between them as vectors of reals. The main application of the distributed representations obtained by code2vec is to estimate the method name from the method body. Code2vec is designed for object-oriented languages such as Java and C\#. 
 
 C language is often used in embedded systems. However, as it is not an object-oriented language, it is not possible to directly apply C language to code2vec. In particular, when estimating the function name, estimation accuracy decreases because the function name itself contains both the module-specific name and general operation name.
 
@@ -62,7 +62,7 @@ In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{
 \begin{table}[t]
  \centering
  \caption{Result of using TF-IDF method}
- \includegraphics[width=1.0\hsize]{image/ITF-DFcompare.eps} 
+ \includegraphics[width=1.0\hsize]{image/TF-IDF.eps} 
  \label{table1} 
 \end{table}
 
@@ -150,13 +150,13 @@ To solve this problem, we proposed a method for classifying function names in C 
 As a result, we found that we can extract only general operation names from function names even in C language.
 % 本研究ではcode2vecをC言語に適用すべく，LLVMとClangを用いて特徴量を抽出する実装について示した．また，関数本体から関数名を推定するタスクにおいては，C言語の関数名などの識別子は，モジュール固有名と一般的な操作名との複合語で構成されることが多いため，学習の際に障害になる可能性があることを議論した．さらに，この問題を解決すべく，C言語の関数名をTF-IDFを用いてモジュール固有名と操作名に分類する手法を提案した．その結果，C言語においても関数名から一般的な操作名のみを抽出することができることを示した．
 
-Future work includes applying TF-IDF to the research of CMU-SEI, and evaluating the application of our proposed method to other identifiers such as variable names and function names with the goal being the estimation of the function from the function name.
- % 今後の課題としては．CMU-SEIの研究へのTF-IDF手法の適用、提案手法を適用することによる評価，関数名のみではなく変数名等の他の識別子への適用による評価などが挙げられる．
+Future work includes applying TF-IDF to the research of CMU-SEI, and evaluating the application of our proposed method to other identifiers such as variable names and function names with the goal being the estimation of the function from the function name. Besides, since the accuracy may change depending on the threshold for the TF-IDF method, it is also significant to consider where the threshold to be set is. We will set various thresholds to find the best one to improve accuracy.
+ % 今後の課題としては．CMU-SEIの研究へのTF-IDF手法の適用、提案手法を適用することによる評価，関数名のみではなく変数名等の他の識別子への適用による評価などが挙げられる．また、TF-IDF手法を用いる際の閾値の設定により精度が変わる可能性があるので、どこに閾値を設定するかを考えることも重要な課題となっている。今後は様々な閾値を設定し、良い閾値を探す。
  % また最終的には関数名から関数を推定する手法の検討が望まれる。
 
 \begin{table}[t]
  \centering
- \caption{Comparison between CMU-SEI and proposed method}
+ \caption{Comparison between CMU-SEI and proposed method\cite{joshi2016accuracy} }
  \includegraphics[width=1.0\hsize]{image/cmu-kyu.eps} 
  \label{table2} 
 \end{table}
