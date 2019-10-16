@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex esample"] 1570944146 "esample.aux" "esample.bbl" "esample" 1570954818
+["bibtex esample"] 1571224488 "esample.aux" "esample.bbl" "esample" 1571224490
   "./ipsjunsrt.bst" 1565578664 22183 69550cce1f2741b7019cdcc86b6f357e ""
-  "ebibsample.bib" 1570944098 6591 367e92ef537289d3aa60fc6e90b7ebb2 ""
-  "esample.aux" 1570954816 961 8e4402ab7e7af20975080e429784394b ""
+  "ebibsample.bib" 1571224264 6786 fbbc99ef6066a84d5e4f93683a560aba ""
+  "esample.aux" 1571224488 1044 4710c31a0f7b6dd055223718a7c7ac8b ""
   (generated)
-  "esample.blg"
   "esample.bbl"
-["dvipdf"] 1570954817 "esample.dvi" "esample.pdf" "esample" 1570954818
-  "esample.dvi" 1570954816 15076 2ff893b78444e764629a227c5d040469 "latex"
+  "esample.blg"
+["dvipdf"] 1571224488 "esample.dvi" "esample.pdf" "esample" 1571224490
+  "esample.dvi" 1571224488 15272 0243742808a3aade921523db5116a7a5 "latex"
   (generated)
   "esample.pdf"
-["latex"] 1570954816 "esample.tex" "esample.dvi" "esample" 1570954818
+["latex"] 1571224488 "esample.tex" "esample.dvi" "esample" 1571224490
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1480098698 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1480098698 1196 1be730212205a270378fba11a44765dc ""
@@ -77,12 +77,12 @@
   "/usr/local/texlive/2017/texmf-var/web2c/eptex/platex.fmt" 1546925694 4345395 0c49284fa5bf4f012fb641c9c53fbd36 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "apris.cls" 1565686992 125346 4b8cf633fe118e28da357bbf713a4c80 ""
-  "esample.aux" 1570954816 961 8e4402ab7e7af20975080e429784394b ""
-  "esample.bbl" 1570944146 1069 246ea7248b644f1447cf942c5f9a433e "bibtex esample"
-  "esample.tex" 1570954814 14953 16f9e8c6499e5024fbc8f10e027e5b38 ""
+  "esample.aux" 1571224488 1044 4710c31a0f7b6dd055223718a7c7ac8b ""
+  "esample.bbl" 1571224488 1203 f6a3b98d451552f7439cd6c1fac33148 "bibtex esample"
+  "esample.tex" 1571224485 14976 bba92b2f732e2751c642482296f7e108 ""
   "image/TF-IDF.eps" 1570617623 81999 0c1a1de5f4b78f6a847f1e8750402018 ""
-  "image/cmu-kyu.eps" 1570943835 107726 ac6c33ea386b824595eaf293d4e58896 ""
+  "image/cmu-kyu.eps" 1571224480 105276 5afb7755c83cb6b198d13109e208cbc4 ""
   (generated)
-  "esample.dvi"
-  "esample.aux"
   "esample.log"
+  "esample.aux"
+  "esample.dvi"

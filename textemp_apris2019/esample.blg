@@ -8,46 +8,46 @@ Warning--Missing required argument pages in rong2014word2vec
 Warning--there's a volume but no series in ramos2003using
 Warning--there's no number and/or volumelattner2007clang
 Warning--Missing required argument pages in lattner2007clang
-You've used 6 entries,
+You've used 7 entries,
             2334 wiz_defined-function locations,
-            596 strings with 5176 characters,
-and the built_in function-call counts, 1431 in all, are:
-= -- 104
-> -- 39
-< -- 3
-+ -- 17
-- -- 11
-* -- 98
-:= -- 193
-add.period$ -- 6
-call.type$ -- 6
+            602 strings with 5264 characters,
+and the built_in function-call counts, 1718 in all, are:
+= -- 128
+> -- 46
+< -- 4
++ -- 20
+- -- 13
+* -- 119
+:= -- 229
+add.period$ -- 7
+call.type$ -- 7
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 11
-duplicate$ -- 98
-empty$ -- 145
-format.name$ -- 22
-if$ -- 348
+cite$ -- 12
+duplicate$ -- 116
+empty$ -- 174
+format.name$ -- 26
+if$ -- 419
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 5
-newline$ -- 21
-num.names$ -- 6
-pop$ -- 25
+int.to.str$ -- 7
+missing$ -- 6
+newline$ -- 24
+num.names$ -- 7
+pop$ -- 30
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 76
+skip$ -- 90
 stack$ -- 0
-substring$ -- 44
-swap$ -- 28
-text.length$ -- 3
+substring$ -- 60
+swap$ -- 34
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 11
-width$ -- 7
-write$ -- 50
-is.kanji.str$ -- 42
+while$ -- 15
+width$ -- 8
+write$ -- 58
+is.kanji.str$ -- 49
 (There were 5 warnings)
