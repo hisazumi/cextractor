@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex esample"] 1571224488 "esample.aux" "esample.bbl" "esample" 1571224490
+["bibtex esample"] 1571299261 "esample.aux" "esample.bbl" "esample" 1571299263
   "./ipsjunsrt.bst" 1565578664 22183 69550cce1f2741b7019cdcc86b6f357e ""
-  "ebibsample.bib" 1571224264 6786 fbbc99ef6066a84d5e4f93683a560aba ""
-  "esample.aux" 1571224488 1044 4710c31a0f7b6dd055223718a7c7ac8b ""
+  "ebibsample.bib" 1571299258 7733 93557756d85f5a3ff7b35d405e650a82 ""
+  "esample.aux" 1571299262 1062 1e072e44e5f20a1aab281fcaa2c7ba4d ""
   (generated)
-  "esample.bbl"
   "esample.blg"
-["dvipdf"] 1571224488 "esample.dvi" "esample.pdf" "esample" 1571224490
-  "esample.dvi" 1571224488 15272 0243742808a3aade921523db5116a7a5 "latex"
+  "esample.bbl"
+["dvipdf"] 1571299262 "esample.dvi" "esample.pdf" "esample" 1571299263
+  "esample.dvi" 1571299262 16012 effbaf542b95fc15e57e9c631aaa16dc "latex"
   (generated)
   "esample.pdf"
-["latex"] 1571224488 "esample.tex" "esample.dvi" "esample" 1571224490
+["latex"] 1571299261 "esample.tex" "esample.dvi" "esample" 1571299263
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1480098698 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1480098698 1196 1be730212205a270378fba11a44765dc ""
@@ -77,11 +77,11 @@
   "/usr/local/texlive/2017/texmf-var/web2c/eptex/platex.fmt" 1546925694 4345395 0c49284fa5bf4f012fb641c9c53fbd36 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
   "apris.cls" 1565686992 125346 4b8cf633fe118e28da357bbf713a4c80 ""
-  "esample.aux" 1571224488 1044 4710c31a0f7b6dd055223718a7c7ac8b ""
-  "esample.bbl" 1571224488 1203 f6a3b98d451552f7439cd6c1fac33148 "bibtex esample"
-  "esample.tex" 1571224485 14976 bba92b2f732e2751c642482296f7e108 ""
+  "esample.aux" 1571299262 1062 1e072e44e5f20a1aab281fcaa2c7ba4d ""
+  "esample.bbl" 1571299261 1417 d84921bb570f1facac2d673e20d15e67 "bibtex esample"
+  "esample.tex" 1571299256 15373 ec4df51add2fb719261032f24ec3dcb7 ""
   "image/TF-IDF.eps" 1570617623 81999 0c1a1de5f4b78f6a847f1e8750402018 ""
-  "image/cmu-kyu.eps" 1571224480 105276 5afb7755c83cb6b198d13109e208cbc4 ""
+  "image/cmu-kyu.eps" 1571281342 59005 e0ad3680a2eb7099e9ab6f17222aa289 ""
   (generated)
   "esample.log"
   "esample.aux"

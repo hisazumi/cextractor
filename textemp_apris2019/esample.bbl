@@ -1,33 +1,36 @@
 \begin{thebibliography}{1}
 
-\bibitem{rong2014word2vec}
-Rong, X.: word2vec parameter learning explained, {\em arXiv preprint
-  arXiv:1411.2738} (2014).
+\bibitem{lian2015exploration}
+Lian, Z.: Exploration of the Working Principle and Application of Word2vec,
+  {\em Sci-Tech Information Development \& Economy},  Vol.~2, pp.\ 145--148
+  (2015).
 
 \bibitem{alon2019code2vec}
 Alon, U., Zilberstein, M., Levy, O. and Yahav, E.: code2vec: Learning
   distributed representations of code, {\em Proceedings of the ACM on
   Programming Languages},  Vol.~3, No.~POPL, p.~40 (2019).
 
-\bibitem{ramos2003using}
-Ramos, J. et al.: Using tf-idf to determine word relevance in document queries,
-  {\em Proceedings of the first instructional conference on machine learning},
-  Vol.~242, Piscataway, NJ, pp.\ 133--142 (2003).
+\bibitem{zhang2011comparative}
+Zhang, W., Yoshida, T. and Tang, X.: A comparative study of TF* IDF, LSI and
+  multi-words for text classification, {\em Expert Systems with Applications},
+  Vol.~38, No.~3, pp.\ 2758--2765 (2011).
 
 \bibitem{code2vec-c}
-cmu sei: code2vec-c, Software Engineering Institute (online),
-  \urle{https://github.com/cmu-sei/code2vec-c} \refdatee{2019}.
+{Software Engineering Institute}: code2vec-c, Carnegie Mellon University
+  (online), \urle{https://github.com/cmu-sei/code2vec-c} \refdatee{2019}.
 
-\bibitem{lattner2007clang}
-Lattner, C. et al.: clang: a C language family frontend for LLVM, {\em Website}
-  (2007).
+\bibitem{vassilev2015clad}
+Vassilev, V., Vassilev, M., Penev, A., Moneta, L. and Ilieva, V.:
+  Clad―automatic differentiation using Clang and LLVM，{\em Journal of
+  Physics: Conference Series}, Vol.~608, No.~1, IOP Publishing, p.\ 012055
+  (2015).
 
 \bibitem{joshi2016accuracy}
 Joshi, R.: Accuracy Precision Recall F1 Score: Interpretation of Performance
   Measures, {\em Retrieved April},  Vol.~1, p.\ 2018 (2016).
 
 \bibitem{sasaki2007truth}
-Sasaki, Y. et al.: The truth of the F-measure, {\em Teach Tutor mater},
-  Vol.~1, No.~5, pp.\ 1--5 (2007).
+Sasaki, Y.: The truth of the F-measure, {\em Teach Tutor mater},  Vol.~1,
+  No.~5, pp.\ 1--5 (2007).
 
 \end{thebibliography}

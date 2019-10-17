@@ -51,13 +51,13 @@ code2vec, TF-IDF, C language, code snippet, function name estimation
 
 %1
 \section{Introduction}
-In natural language processing, methods for obtaining distributed representations that take into account their meanings such as word2vec\cite{rong2014word2vec} have been proposed and applied in various ways. Current software development is supported in various ways using similar methods in program code. However, there is room for improvement in both methods and applications. 
+In natural language processing, methods for obtaining distributed representations that take into account their meanings such as word2vec\cite{lian2015exploration} have been proposed and applied in various ways. Current software development is supported in various ways using similar methods in program code. However, there is room for improvement in both methods and applications. 
 
 Code2vec\cite{alon2019code2vec} has been proposed as a method for obtaining the distributed representation of a given program code snippet. In this approach, it is possible to numerically express the code snippets and the relationship between them as vectors of reals. The main application of the distributed representations obtained by code2vec is to estimate the method name from the method body. Code2vec is designed for object-oriented languages such as Java and C\#. 
 
 C language is often used in embedded systems. However, as it is not an object-oriented language, it is not possible to directly apply C language to code2vec. In particular, when estimating the function name, estimation accuracy decreases because the function name itself contains both the module-specific name and general operation name.
 
-In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{ramos2003using} to the function name to remove module-specific names based on the TF-IDF value as shown in Table~\ref{table1}. The TF-IDF value increases when a certain word frequently appears in a specific document, whilst only appearing infrequently in other documents. Since the module-specific name is unique within a document, its TF-IDF value is high. Therefore, we set a threshold for the TF-IDF value and delete the one with the highest value to leave only the operation name. By learning only operation names as function names, we aim to improve the accuracy of function name estimation. 
+In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{zhang2011comparative} to the function name to remove module-specific names based on the TF-IDF value as shown in Table~\ref{table1}. The TF-IDF value increases when a certain word frequently appears in a specific document, whilst only appearing infrequently in other documents. Since the module-specific name is unique within a document, its TF-IDF value is high. Therefore, we set a threshold for the TF-IDF value and delete the one with the highest value to leave only the operation name. By learning only operation names as function names, we aim to improve the accuracy of function name estimation. 
 
 \begin{table}[t]
  \centering
@@ -72,7 +72,7 @@ In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{
 The CMU-SEI group\cite{code2vec-c} has implemented a C parser for code2vec.
 % Cmu-sei\cite{}の研究では、我々と似たような手法でC言語へのcode2vecの適用を試みていた。
 They paid attention to syntactic differences between parsers of C and Java, such as function declarations which exist in C but not in Java.
-They used Clang and LLVM\cite{lattner2007clang}, and tried to apply code2vec to C language by abstracting the functions.
+They used Clang and LLVM\cite{vassilev2015clad}, and tried to apply code2vec to C language by abstracting the functions.
 % 彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
 In this case, the accuracy of function name estimation may not improve because the module name and operation name are not separated.
 % しかし、彼らはTF-IDFを用いていない。これではモジュール名と操作名が分離されていないので、関数名推定の精度が上がらない恐れがある。そこで我々は彼らとTF-IDFを用いた我々での関数名推定の制度を比較し検討した。
@@ -155,10 +155,13 @@ Future work includes applying TF-IDF to the research of CMU-SEI, and evaluating 
  % また最終的には関数名から関数を推定する手法の検討が望まれる。
 
 \begin{table}[t]
- \centering
+ % \centering
  \caption{Comparison between CMU-SEI and proposed method\cite{joshi2016accuracy} \cite{sasaki2007truth} }
  \includegraphics[width=1.0\hsize]{image/cmu-kyu.eps} 
  \label{table2} 
+ \noindent \textbf{Precision}  - Precision is the ratio of correctly predicted positive observations to the total predicted positive observations. \\
+ \noindent \textbf{Recall} (Sensitivity) - Recall is the ratio of correctly predicted positive observations to the all observations in actual class.\\
+ \noindent \textbf{F1 score} - F1 Score is the harmony mean of Precision and Recall.
 \end{table}
 
 
