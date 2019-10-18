@@ -72,7 +72,7 @@ In this study, we apply TF-IDF (Term Frequency Inverse Document Frequency)\cite{
 The CMU-SEI group\cite{code2vec-c} has implemented a C parser for code2vec.
 % Cmu-sei\cite{}の研究では、我々と似たような手法でC言語へのcode2vecの適用を試みていた。
 They paid attention to syntactic differences between parsers of C and Java, such as function declarations which exist in C but not in Java.
-They used Clang and LLVM\cite{vassilev2015clad}, and tried to apply code2vec to C language by abstracting the functions.
+They used Clang and LLVM\cite{balogh2018op2}, and tried to apply code2vec to C language by abstracting the functions.
 % 彼らはCとJavaのパーサーの違いや、Cにある関数宣言がJavaにはないことなどに着目し、我々と同様にClangとLLVMを使用し、関数を抽象化することで、code2vecのC言語への適用を試みていた。
 In this case, the accuracy of function name estimation may not improve because the module name and operation name are not separated.
 % しかし、彼らはTF-IDFを用いていない。これではモジュール名と操作名が分離されていないので、関数名推定の精度が上がらない恐れがある。そこで我々は彼らとTF-IDFを用いた我々での関数名推定の制度を比較し検討した。
@@ -156,11 +156,11 @@ Future work includes applying TF-IDF to the research of CMU-SEI, and evaluating 
 
 \begin{table}[t]
  % \centering
- \caption{Comparison between CMU-SEI and proposed method\cite{joshi2016accuracy} \cite{sasaki2007truth} }
+ \caption{Comparison between CMU-SEI and proposed method\cite{flach2015precision} \cite{sasaki2007truth} }
  \includegraphics[width=1.0\hsize]{image/cmu-kyu.eps} 
  \label{table2} 
- \noindent \textbf{Precision}  - Precision is the ratio of correctly predicted positive observations to the total predicted positive observations. \\
- \noindent \textbf{Recall} (Sensitivity) - Recall is the ratio of correctly predicted positive observations to the all observations in actual class.\\
+ \noindent \textbf{Precision} - Precision is the proportion of true positives among the positive predictions.\\
+ \noindent \textbf{Recall} - Recall is the ratio of true positive.\\
  \noindent \textbf{F1 score} - F1 Score is the harmony mean of Precision and Recall.
 \end{table}
 

@@ -8,7 +8,7 @@ Lian, Z.: Exploration of the Working Principle and Application of Word2vec,
 \bibitem{alon2019code2vec}
 Alon, U., Zilberstein, M., Levy, O. and Yahav, E.: code2vec: Learning
   distributed representations of code, {\em Proceedings of the ACM on
-  Programming Languages},  Vol.~3, No.~POPL, p.~40 (2019).
+  Programming Languages},  Vol.~3, pp.\ 1--29 (2019).
 
 \bibitem{zhang2011comparative}
 Zhang, W., Yoshida, T. and Tang, X.: A comparative study of TF* IDF, LSI and
@@ -19,15 +19,16 @@ Zhang, W., Yoshida, T. and Tang, X.: A comparative study of TF* IDF, LSI and
 {Software Engineering Institute}: code2vec-c, Carnegie Mellon University
   (online), \urle{https://github.com/cmu-sei/code2vec-c} \refdatee{2019}.
 
-\bibitem{vassilev2015clad}
-Vassilev, V., Vassilev, M., Penev, A., Moneta, L. and Ilieva, V.:
-  Clad―automatic differentiation using Clang and LLVM，{\em Journal of
-  Physics: Conference Series}, Vol.~608, No.~1, IOP Publishing, p.\ 012055
-  (2015).
+\bibitem{balogh2018op2}
+Balogh, G.~D., Mudalige, G.~R., Reguly, I.~Z., Antao, S. and Bertolli, C.:
+  OP2-Clang: A source-to-source translator using Clang/LLVM LibTooling, {\em
+  2018 IEEE/ACM 5th Workshop on the LLVM Compiler Infrastructure in HPC
+  (LLVM-HPC)}, IEEE, pp.\ 59--70 (2018).
 
-\bibitem{joshi2016accuracy}
-Joshi, R.: Accuracy Precision Recall F1 Score: Interpretation of Performance
-  Measures, {\em Retrieved April},  Vol.~1, p.\ 2018 (2016).
+\bibitem{flach2015precision}
+Flach, P. and Kull, M.: Precision-recall-gain curves: PR analysis done right,
+  {\em Advances in neural information processing systems}, pp.\ 838--846
+  (2015).
 
 \bibitem{sasaki2007truth}
 Sasaki, Y.: The truth of the F-measure, {\em Teach Tutor mater},  Vol.~1,
