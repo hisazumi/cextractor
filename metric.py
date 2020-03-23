@@ -1,7 +1,7 @@
 import json
 
 if __name__ == "__main__":
-    with open("../linux-4.20/index.dict") as file:
+    with open("../linux-4.20/total.dict") as file:
         data = json.load(file)
         total = sum(int(i) for i in data.values())
         print(total)

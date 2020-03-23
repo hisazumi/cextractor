@@ -39,6 +39,14 @@ for validating
 for testing
 > find ../freebsd/sys/i386 -name '*.path' | xargs cat > data/linux/test.txt
 
+Preprocess extracted pathes
+>  ./preprocess.sh linux
+
+Train
+> train.sh linux
+
+Predict
+predict.sh linux
 
 Show Help
 
