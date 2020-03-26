@@ -1,22 +1,16 @@
+# -*- coding: utf-8 -*-
 import sys
 import re
 import itertools
-import json
 import clang.cindex
+import pandas as pd
+import openpyxl
+
+import numpy as np
+
 from clang.cindex import Index, Cursor
 from argparse import ArgumentParser
 from collections import defaultdict
-
-filter_dictionary = {}
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~
-first_cap_re = re.compile('(.)([A-Z][a-z]+)')
-all_cap_re = re.compile('([a-z0-9])([A-Z])')
-def camel2snake(name):
-    s1 = first_cap_re.sub(r'\1_\2', name)
-    return all_cap_re.sub(r'\1_\2', s1).lower()
-# ~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 class Function:
     SKIP_KINDNAME = ['PARM_DECL']
@@ -32,21 +26,10 @@ class Function:
         return [Pair(x) for x in itertools.combinations(self.leaves, 2)]
 
     def function_name_split(self):
-        return Function.cfunction_name_split(self.funcdecl)
-
-    @classmethod
-    def cfunction_name_split(klass, displayname):
-        name = displayname[:displayname.index('(')]
-# ~~~~~~~~~~~~~~~~~~~~~~~~
-        snaked = camel2snake(name)
-        splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", snaked)
-        # splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
-# ~~~~~~~~~~~~~~~~~~~~~~~~
-        filtered = [x.lower() for x in splitted if len(x) > 0]
-        if len(filter_dictionary) > 0:
-            return [x for x in filtered if x in filter_dictionary]
-        else:
-            return filtered
+        name = self.funcdecl[:self.funcdecl.index('(')]
+        splitted = re.split("(?<=[a-z])(?=[A-Z])|_|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
+        filtered = [x for x in splitted if len(x) > 0] 
+        return filtered
     
     def function_name(self):
         return '|'.join(self.function_name_split())
@@ -60,12 +43,9 @@ class Function:
             print(' ', end='')
             p.print_paths()
 
-    def count_function_name(self, names):
+    def count_name(self, names):
         for n in self.function_name_split():
             names[n] += 1
-
-    def count_name(self, names):
-        self.count_function_name(names)
         self.function_def.count_name(names)
 
     def to_str(self):
@@ -140,10 +120,7 @@ class Node:
     def split_name(klass, name):
         splitted = re.split("(?<=[a-z])(?=[A-Z])|_|\s|[0-9]|(?<=[A-Z])(?=[A-Z][a-z])", name)
         filtered = [x.lower() for x in splitted if len(x) > 0]
-        if len(filter_dictionary) > 0:
-            return [x for x in filtered if x in filter_dictionary]
-        else:
-            return filtered
+        return filtered
 
     @classmethod
     def normalize_name(klass, name):
@@ -156,7 +133,7 @@ class Node:
             return Node.normalize_name(self.content)
 
     def add_set_wo_normalize(self, s):
-        if self.content == '' or self.type == 'STRING_LITERAL' or self.type == 'FUNCTION_DECL' or len(self.children) > 0:
+        if self.content == '' or self.type == 'STRING_LITERAL' or len(self.children) > 0:
             pass # s.add(self.type)
         else:
             for n in Node.split_name(self.content):
@@ -218,35 +195,14 @@ class Pair:
 
 def file2function_array(file):
     tu = Index.create().parse(file)
-
     return [Function(child) for child in tu.cursor.get_children() \
-                if child.kind.name == 'FUNCTION_DECL' and \
-                   str(child.extent.start.file) == file] #for avoiding include
-
-def file2function_array_without_pair(file):
-    tu = Index.create().parse(file)
-
-    return [Function(child,False) for child in tu.cursor.get_children() \
-                if child.kind.name == 'FUNCTION_DECL' and \
-                   str(child.extent.start.file) == file] #for avoiding include
-
-
-def show_function_names(file):
-    tu = Index.create().parse(file)
-    for child in tu.cursor.get_children():
-        if child.kind.name == 'FUNCTION_DECL' and \
-                str(child.extent.start.file) == file:
-            print('|'.join(Function.cfunction_name_split(child.displayname)))
-
-def read_filter_dictionary(file):
-    if file == None:
-        return
-
-    with open(file) as file:
-        global filter_dictionary
-        filter_dictionary = json.load(file)
+                if child.kind.name == 'FUNCTION_DECL']
 
 if __name__ == "__main__":
+
+    name = []
+    count = []
+
     # Parse arguments
     usage = 'Usage: python {} FILE [--path] [--help]'\
             .format(__file__)
@@ -262,32 +218,19 @@ if __name__ == "__main__":
     argparser.add_argument('-d', '--dict',
                            action='store_true',
                            help="show name dictionary")
-    argparser.add_argument('-n', '--name',
-                           action='store_true',
-                           help="show function name dictionary")
     argparser.add_argument('-r', '--predict',
                            action='store_true',
                            help='show output for prediction')
-    argparser.add_argument('-m', '--functions',
-                           action='store_true',
-                           help='show function names')
-    argparser.add_argument('-f', '--filter', 
-                           action='store', type=str,
-                           help='dictionary for filtering identifier')
-
     args = argparser.parse_args()
 
     # Body
     if args.path:
-        read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
             f.print_fullpaths()
     elif args.ast:
-        read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
             f.print_ast()
     elif args.predict:
-        read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
             if f.has_pair():
                 f.print_for_prediction()
@@ -296,18 +239,31 @@ if __name__ == "__main__":
         for f in file2function_array(args.filename):
             f.count_name(names)
 
-        print(json.dumps(names))     
-    elif args.name: #make function name dictionary
-        names = defaultdict(lambda: 0)
-        for f in file2function_array_without_pair(args.filename):
-            f.count_function_name(names)
+        for k,v in names.items():
+            print("%s:%d" % (k, v), end=' ')
+            name = np.append(name, k)
+            count = np.append(count, v)
 
-        print(json.dumps(names))
-    elif args.functions:
-        read_filter_dictionary(args.filter)
-        show_function_names(args.filename)
+        # 名前と回数を格納
+        name = np.reshape(name, (len(name),1))
+        count = np.reshape(count, (len(count),1))
+
+        # データフレーム作成
+        df1 = pd.DataFrame(name,columns=['name'])
+        df2 = pd.DataFrame(count,columns=['count'])
+
+
+        # データフレームの結合　横に
+        cext = pd.concat([df1, df2], axis=1)
+        fname = args.filename
+        # 区切り
+        fname2 = re.split('[./]', fname)
+        cext.to_csv(fname2[3] + ".csv")
+
+
+ 
+        print()
     else:
-        read_filter_dictionary(args.filter)
         for f in file2function_array(args.filename):
             if f.has_pair():
                 f.print_paths()

@@ -1,0 +1,78 @@
+
+%\documentclass[english]{ipsj}
+%\documentclass[english,preprint]{ipsj}
+\documentclass[english,preprint,JIP]{ipsj}
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+
+\def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
+\def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
+\def\|{\verb|}|
+
+
+\setcounter{volume}{26}% vol25=2017
+\setcounter{number}{1}%
+\setcounter{page}{1}
+
+
+\received{2016}{3}{4}
+%\rereceived{2011}{10}{1}   % optional
+%\rerereceived{2011}{10}{31} % optional
+\accepted{2016}{8}{1}
+
+
+
+\usepackage[varg]{txfonts}%%!!
+\makeatletter%
+\input{ot1txtt.fd}
+\makeatother%
+
+\begin{document}
+
+\title{code2vec for C: The Acquisition Method of Distributed Representation of the C Language with The TF-IDF Method}
+
+% \affiliate{IPSJ}{Information Processing Society of Japan, 
+% Chiyoda, Tokyo 101--0062, Japan}
+% \affiliate{JU}{Johoshori University, Chiyoda, Tokyo 101--0062, Japan}
+% \paffiliate{PJU}{Johoshori University}
+
+% \author{Taro Joho}{IPSJ,PJU}[joho.taro@ipsj.or.jp]
+% \author{Hanako Shori}{JU}[shori.hanako@johosyori-u.ac.jp]
+% \author{Jiro Gakkai}{IPSJ}
+
+\affiliate{IPSJ}{Faculty of Information Science and Electrical Engineering, Kyushu University}
+\affiliate{JU}{Graduate School of Information Science and Electrical Engineering, Kyushu University}
+\affiliate{F}{ Fujitsu Kyushu Network Technologies Limited}
+
+\author{Kotori Hieda}{JU}[hieda@f.ait.kyushu-u.ac.jp]
+\author{Kenji Hisazumi}{IPSJ}[nel@slrc.kyushu-u.ac.jp]
+\author{Hirofumi Yagawa}{F}
+\author{Akira Fukuda}{IPSJ}[fukuda@f.ait.kyushu-u.ac.jp]
+
+
+\begin{abstract}
+Code2vec is a method for obtaining a distributed representation of the program code. It obtains the embedding vector of program code by machine learning and predicts the label such as method body representing the functionality of the code snippets. Thus, it is possible to obtain a distributed representation of the code snippet whose meaning is taken into account. In the embedded system development, you often use the C language which is non-object-oriented, but code2vec is intended for object-oriented programming languages ​​such as Java and C#. Therefore, to apply the code2vec to the C language,  there are some challenges that labeling is difficult since the naming of the function name is different from that of the object-oriented language and we need to consider a method of feature amount extraction from C language. In this study to apply code2vec to the C language programs, we propose a method for extracting feature value from the C language programs and TF-IDF method for decomposing a function name in a module-specific name and general operation name like the object-oriented language.
+\end{abstract}
+
+\begin{keyword}
+code2vec, TF-IDF, C language, code snippet, function name estimation
+\end{keyword}
+
+\maketitle
+
+%1
+\section{Introduction}
+
+
+
+%2
+\section{}
+
+
+
+%
+\bibliographystyle{ipsjunsrt}
+\bibliography{bibsample}
+
+\end{document}

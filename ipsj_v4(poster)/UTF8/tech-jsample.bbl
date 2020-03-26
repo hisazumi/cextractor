@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{rong2014word2vec}
+Rong, X.: word2vec parameter learning explained, {\em arXiv preprint
+  arXiv:1411.2738} (2014).
+
+\bibitem{alon2019code2vec}
+Alon, U., Zilberstein, M., Levy, O. and Yahav, E.: code2vec: Learning
+  distributed representations of code, {\em Proceedings of the ACM on
+  Programming Languages},  Vol.~3, No.~POPL, p.~40 (2019).
+
+\bibitem{ramos2003using}
+Ramos, J. et al.: Using tf-idf to determine word relevance in document queries,
+  {\em Proceedings of the first instructional conference on machine learning},
+  Vol.~242, Piscataway, NJ, pp.\ 133--142 (2003).
+
+\bibitem{lattner2007clang}
+Lattner, C. et al.: clang: a C language family frontend for LLVM, {\em Website}
+  (2007).
+
+\end{thebibliography}

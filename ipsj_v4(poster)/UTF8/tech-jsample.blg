@@ -1,0 +1,53 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: tech-jsample.aux
+The style file: ipsjunsrt.bst
+Database file #1: bibsample.bib
+Warning--there's no number and/or volumerong2014word2vec
+Warning--Missing required argument pages in rong2014word2vec
+Warning--there's a volume but no series in ramos2003using
+Warning--there's no number and/or volumelattner2007clang
+Warning--Missing required argument pages in lattner2007clang
+You've used 4 entries,
+            2334 wiz_defined-function locations,
+            587 strings with 4922 characters,
+and the built_in function-call counts, 1036 in all, are:
+= -- 72
+> -- 31
+< -- 2
++ -- 13
+- -- 9
+* -- 76
+:= -- 140
+add.period$ -- 4
+call.type$ -- 4
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 68
+empty$ -- 106
+format.name$ -- 18
+if$ -- 248
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 15
+num.names$ -- 4
+pop$ -- 20
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 50
+stack$ -- 0
+substring$ -- 36
+swap$ -- 18
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 5
+while$ -- 8
+width$ -- 5
+write$ -- 34
+is.kanji.str$ -- 30
+(There were 5 warnings)
